@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Daniel Balloch`,
+    description: `Front end web designer skilled in discovery, prototyping, UI/UX, responsive design and eccomerce solutions. Call 022 0780868 or email
+    danielkingballoch@gmail.com for work inquiries.`,
+    author: `@danielballoch`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,9 +25,24 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/tinyhead.jpg`, // This path is relative to the root of the site.
       },
+    
     },
+    {
+        resolve: `gatsby-plugin-emotion`,
+        options: {
+          // Accepts all options defined by `babel-plugin-emotion` plugin.
+        },
+    },
+    {
+        resolve: `gatsby-plugin-transition-link`,
+        options: {
+            layout: require.resolve(`./src/components/layout.js`)
+        }
+    }
+    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
