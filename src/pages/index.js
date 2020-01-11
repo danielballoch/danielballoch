@@ -151,7 +151,6 @@ margin-top: 7%;
 div{
     transform: rotate(180deg);
     margin: 0 10px;
-    border-bottom: white 2px solid;
     :hover{
         border-bottom: black 2px solid;
         cursor: pointer;
@@ -160,8 +159,6 @@ div{
 a{
     transform: rotate(180deg);
     margin: 0 10px;
-    border-color: rgba(1,1,1,0);
-    border-bottom: 2px solid;
     transition: 3s;
     :hover{
         transition: 3s;
@@ -171,6 +168,21 @@ a{
     
 }
 `
+const NavLink = styled.div`
+border-bottom: ${props => props.theme.borderColor} 2px solid;
+transition: 1s;
+`
+NavLink.defaultProps = {
+    theme: {
+        borderColor: "white"
+    }
+}
+
+const active = {
+    theme: {
+        borderColor: "black"
+    }
+}
 
 
 
@@ -181,6 +193,38 @@ class IndexPage extends React.Component {
         this.homeref = React.createRef();
         this.projectref = React.createRef();
       }
+
+      componentDidMount() {
+        //index page is currently only page which has non-top white
+        //if more added, create getScrollTarget fuction 
+        window.addEventListener('scroll', this.handleScroll);
+    };
+    
+    componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll);
+    };
+
+    state = {
+      scroll: false,
+  };
+    
+    handleScroll = (event) => {
+      const scrollTarget = document.getElementById('projects').offsetHeight-60;
+      if(window.pageYOffset > scrollTarget){
+          this.setState({
+              scroll: true
+          })
+      } else {
+          this.setState({
+              scroll: false
+          })
+      }
+      console.log(this.state.scroll);
+      
+      
+      
+    };
+
     
     render (){
 
@@ -190,14 +234,14 @@ class IndexPage extends React.Component {
     const data = this.props.data;
     const postEdges = data.allMarkdownRemark.edges;
     console.log("index",transitionStatus, entry, exit)
-
+    
     return (
         <Wrapper ref={this.homeref}>
             <SEO title="Home" />
-            <NavOverlay>
-                <div onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})}>Home</div>
-                {/* <div>Skills</div> */}
-                <div onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} >Projects</div>
+            <NavOverlay >
+                <NavLink onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})} theme={this.state.scroll ? undefined : active}>Home</NavLink>
+                {/* <div>Skills</div> */}-
+                <NavLink onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll ? active : undefined} >Projects</NavLink>
             </NavOverlay>
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
                
@@ -248,7 +292,7 @@ class IndexPage extends React.Component {
             
                 
             </AniDiv>
-            <ProjectSection ref={this.projectref}>
+            <ProjectSection ref={this.projectref} id="projects">
                 <PostListing postEdges={postEdges} />
             </ProjectSection>
             
