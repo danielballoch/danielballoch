@@ -20,30 +20,24 @@ margin-top: 7%;
 div{
     transform: rotate(180deg);
     margin: 0 10px;
-    border-bottom: white 2px solid;
-    :hover{
-        border-bottom: black 2px solid;
-        cursor: pointer;
-    }
+  
+    text-decoration: none;
+    
 }
 a{
     transform: rotate(180deg);
     margin: 0 10px;
-    border-color: white;
-    border-bottom: 2px solid;
-    transition: 3s;
-    :hover{
-        transition: 3s;
-        border-color: black;
-        border-bottom: 2px solid;
-    }
-    
+    transition: .3s;
+    text-decoration: none;
 }
 `
 const SLink = styled(Link)`
 color: black;
-border-color: white;
-text-decoration: none;
+border-bottom: white 2px solid;
+:hover{
+        border-bottom: black 2px solid;
+        cursor: pointer;
+    }
 `
 
 
