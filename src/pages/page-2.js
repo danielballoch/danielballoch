@@ -5,6 +5,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from '@emotion/styled'
 
+const Wrapper = styled.div`
+margin: 0 auto;
+max-width: 960px;
+min-height: 100vh;
+height: 100%;
+padding: 100px 1.0875rem 1.45rem;
+`
+
 const AniDiv = styled.div`
 transform: ${props => props.theme.translate};
 opacity: ${props => props.theme.opacity};
@@ -43,7 +51,7 @@ const SecondPage = ({transitionStatus, entry, exit}) => {
     console.log("page2", transitionStatus, entry, exit)
 
     return(
-        <div>
+        <Wrapper>
             <SEO title="Page two" />
             <h1>Hi from the second page</h1>
             <hr></hr>
@@ -67,7 +75,7 @@ const SecondPage = ({transitionStatus, entry, exit}) => {
             >
                 Back to the homepage
             </TransitionLink>
-        </div>
+        </Wrapper>
     )
 }
 

@@ -9,16 +9,26 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
 
+import responsivedesign from '../images/skill-gifs/responsivedesign.gif'
+import PostListing from "../components/post-link"
+
 const Wrapper = styled.div`
 margin: 0 auto;
-max-width: 960px;
-height: 100vh;
+min-height: 100vh;
+width: 100%;
+height: 100%;
 padding: 100px 1.0875rem 1.45rem;
 `
 
 const AniDiv = styled.div`
+display: flex;
+margin: 0 auto;
+justify-content: space-evenly;
 opacity: ${props => props.theme.opacity};
 transition: .3s;
+/* max-width: 960px; */
+max-width: 1080px;
+height: 100vh;
 `
 
 AniDiv.defaultProps = {
@@ -68,14 +78,16 @@ HeroText.defaultProps = {
     }
 }
 const HeroImage = styled.div`
-position: absolute;
+/* position: absolute;
 width: calc(70vh*0.66);
 top: 100px;
 right: 15%;
-min-width: 240px;
+min-width: 240px; */
 @media (max-width: 500px) {
     display:none;
 }
+width: calc(70vh*0.66);
+/* width: 50%; */
 `
 
 const SocialDiv = styled.div`
@@ -97,6 +109,54 @@ transition: .5s;
     opacity: 1;
 }
 `
+const SkillsSection = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-top: 30px;
+h2{
+    margin-top: 30vh;
+}
+h3{
+    padding: 40px;
+}
+
+`
+const SkillGifDiv = styled.div`
+    position: absolute;
+    left: 50%;
+    top: 100vh;
+    width: 480px;
+    background-color: #18171a;
+    height: 274px;
+    border: 5px solid #18171a;
+    border-radius: 14px;
+`
+
+const ProjectSection = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+text-align: center;
+`
+
+const NavOverlay = styled.div`
+position: fixed;
+display: flex;
+left: 0;
+transform: rotate(90deg);
+opacity: .4;
+margin-top: 7%;
+div{
+    transform: rotate(180deg);
+    margin: 0 10px;
+    border-bottom: white 2px solid;
+    :hover{
+        border-bottom: black 2px solid;
+    }
+    
+}
+`
 
 
 
@@ -104,9 +164,15 @@ transition: .5s;
 const IndexPage = ({data, transitionStatus, entry, exit}) => {
     console.log("index",transitionStatus, entry, exit)
     console.log(data)
+    const postEdges = data.allMarkdownRemark.edges;
     return (
         <Wrapper>
             <SEO title="Home" />
+            <NavOverlay>
+                <div>Home</div>
+                {/* <div>Skills</div> */}
+                <div>Projects</div>
+            </NavOverlay>
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
                
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
@@ -132,16 +198,35 @@ const IndexPage = ({data, transitionStatus, entry, exit}) => {
                     exit={{length: .5, state: {pass: true}}}
                     entry={{length: .3, delay: .5, state: {pass: false}}}
                     >
-                        Go to page 2
+                        Project Wall
                     </TransitionLink>
 
                 </HeroText> 
                 <HeroImage>
                     <Img fluid={data.placeholderImage.childImageSharp.fluid} />
                 </HeroImage>
-                
+
+                {/* <SkillsSection>
+                    <h2>Skills:</h2>
+                    <h3>- Communication & Discovery</h3>
+                    <h3>- Prototyping</h3>
+                    <h3>- UI/UX</h3>
+                    <h3>- Responsive Design</h3>
+                    <h3>- Ecommerce Solutions</h3>
+                    <SkillGifDiv>
+                        <div>
+                            <img src={responsivedesign}></img>
+                        </div>
+                    </SkillGifDiv>
+                </SkillsSection> */}
+            
                 
             </AniDiv>
+            <ProjectSection>
+                <PostListing postEdges={postEdges} />
+            </ProjectSection>
+            
+            
         </Wrapper>
     )
 }
@@ -154,7 +239,7 @@ export const Query = graphql`
     query {
       placeholderImage: file(relativePath: { eq: "headshotmin.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 600) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -180,5 +265,32 @@ export const Query = graphql`
           }
         }
       }
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 250)
+            frontmatter {
+                title
+                path
+                tags
+                service
+                date(formatString: "DD MMMM, YYYY")
+                image {
+                  childImageSharp {
+                    fluid(
+                      maxWidth: 1000
+                      quality: 90
+                      traceSVG: { color: "#2B2B2F" }
+                    ) {
+                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                  }
+                }
+            }
+          }
+        }
+      }
+      
     }
   `

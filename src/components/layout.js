@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     <>
       <div>
         <main>{children}</main>
-        <footer>
+        <footer style={{textAlign: 'center'}}>
           © {new Date().getFullYear()}, 
           {` `}
           <a href="https://www.danbwebdesign.com">Daniel Balloch</a>
