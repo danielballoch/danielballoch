@@ -1,5 +1,5 @@
 ---
-path: "/projects/Menco2"
+path: "/projects/danb"
 image: "./danbhero.jpg"
 date: "2020-10-15"
 title: "danb"

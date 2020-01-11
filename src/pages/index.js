@@ -137,6 +137,7 @@ const ProjectSection = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
+min-height: 80vh;
 text-align: center;
 `
 
@@ -153,6 +154,19 @@ div{
     border-bottom: white 2px solid;
     :hover{
         border-bottom: black 2px solid;
+        cursor: pointer;
+    }
+}
+a{
+    transform: rotate(180deg);
+    margin: 0 10px;
+    border-color: rgba(1,1,1,0);
+    border-bottom: 2px solid;
+    transition: 3s;
+    :hover{
+        transition: 3s;
+        border-color: rgba(1,1,1,1,1);
+        border-bottom: 2px solid;
     }
     
 }
@@ -161,21 +175,34 @@ div{
 
 
 
-const IndexPage = ({data, transitionStatus, entry, exit}) => {
-    console.log("index",transitionStatus, entry, exit)
+class IndexPage extends React.Component { 
+    constructor(props) {
+        super(props);
+        this.homeref = React.createRef();
+        this.projectref = React.createRef();
+      }
+    
+    render (){
+    
     console.log(data)
+    const transitionStatus = this.transitionStatus;
+    const entry = this.props.entry;
+    const exit = this.props.exit;
+    const data = this.props.data;
     const postEdges = data.allMarkdownRemark.edges;
+    console.log("index",transitionStatus, entry, exit)
+
     return (
-        <Wrapper>
+        <Wrapper ref={this.homeref}>
             <SEO title="Home" />
             <NavOverlay>
-                <div>Home</div>
+                <div onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})}>Home</div>
                 {/* <div>Skills</div> */}
-                <div>Projects</div>
+                <div onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} >Projects</div>
             </NavOverlay>
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
                
-                <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
+                <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
                     <h2>Hey, I'm Daniel. A front-end developer whose always learning and building.</h2>
                     <p><b>ph:</b> 022 0780868</p>
                     <p><b>mail:</b> danielkingballoch@gmail.com</p>
@@ -222,7 +249,7 @@ const IndexPage = ({data, transitionStatus, entry, exit}) => {
             
                 
             </AniDiv>
-            <ProjectSection>
+            <ProjectSection ref={this.projectref}>
                 <PostListing postEdges={postEdges} />
             </ProjectSection>
             
@@ -230,7 +257,7 @@ const IndexPage = ({data, transitionStatus, entry, exit}) => {
         </Wrapper>
     )
 }
-
+}
 export default IndexPage
 
 
