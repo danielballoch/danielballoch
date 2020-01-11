@@ -183,12 +183,10 @@ class IndexPage extends React.Component {
       }
     
     render (){
-    
-    console.log(data)
-    const transitionStatus = this.transitionStatus;
+
+    const transitionStatus = this.props.transitionStatus;
     const entry = this.props.entry;
     const exit = this.props.exit;
-    const data = this.props.data;
     const postEdges = data.allMarkdownRemark.edges;
     console.log("index",transitionStatus, entry, exit)
 
