@@ -32,7 +32,12 @@ h1{
 `
 const InsideWrapper =styled.div`
 .image{
-    width: 360px;
+    width: 480px;
+    height: 238px;
+    @media (max-width: 620px) {
+        width: auto;
+        height: auto;
+    }
 }
 padding: 10px;
 background: whitesmoke;
