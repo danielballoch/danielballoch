@@ -1,6 +1,6 @@
 ---
 path: "/projects/danb/danb-project/"
-image: "./danbhero.jpg"
+image: "./danbheroRE.jpg"
 date: "2020-10-15"
 title: "danb"
 service: "Branding, Progressive Web App"
