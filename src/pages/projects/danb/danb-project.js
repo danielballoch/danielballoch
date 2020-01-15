@@ -68,6 +68,11 @@ a{
     transition: .3s;
     text-decoration: none;
 }
+@media (max-width:1100px){
+    transform: rotate(-180deg);
+    margin-top: 10px;
+    z-index: 1000;
+}
 `
 const SLink = styled(TransitionLink)`
 color: black;
