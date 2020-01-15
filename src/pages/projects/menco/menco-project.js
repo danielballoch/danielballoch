@@ -10,9 +10,13 @@ import Img from "gatsby-image"
 import planninggif from '../menco/planningdemo.gif'
 import responsivegif from '../menco/responsivedesign.gif'
 
+const FadeDiv = styled.div`
+opacity: ${props => props.theme.opacity};
+transition: .3s;
+`
+
 const Wrapper = styled.div`
 transition: .3s;
-opacity: ${props => props.theme.opacity};
 margin: 0 auto;
 max-width: 960px;
 min-height: 100vh;
@@ -34,7 +38,7 @@ h2{
 }
 `
 
-Wrapper.defaultProps = {
+FadeDiv.defaultProps = {
     theme: {
         opacity: "1",
     }
@@ -59,6 +63,11 @@ a{
     margin: 0 10px;
     transition: .3s;
     text-decoration: none;
+}
+@media (max-width:1100px){
+    transform: rotate(-180deg);
+    margin-top: 10px;
+    z-index: 1000;
 }
 `
 const SLink = styled(TransitionLink)`
@@ -124,8 +133,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
     const post = data.markdownRemark.frontmatter
     var projectImages = data.images.nodes.map(image => ({original: image.childImageSharp.fluid.src}))
     return(
-        <Wrapper theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
-            <SEO title="Menco" />
+        <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <NavOverlay>
                 <SLink to="/" 
                 exit={{length: .5, state: {pass: true}}}
@@ -141,6 +149,9 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                     Contact
                 </SLink>
             </NavOverlay>
+        <Wrapper >
+            <SEO title="Menco" />
+            
 
             <h1>{post.title}</h1>
             <a href="www.mencoapparel.com">www.mencoapparel.com</a>
@@ -183,6 +194,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 Back to the homepage
             </TransitionLink>
         </Wrapper>
+        </FadeDiv>
     )
 }
 

@@ -12,6 +12,11 @@ import styled from "@emotion/styled"
 import responsivedesign from '../images/skill-gifs/responsivedesign.gif'
 import PostListing from "../components/post-link"
 
+const FadeDiv = styled.div`
+opacity: ${props => props.theme.opacity};
+transition: .3s;
+`
+
 const Wrapper = styled.div`
 margin: 0 auto;
 min-height: 100vh;
@@ -32,7 +37,7 @@ max-width: 1080px;
 height: 100vh;
 `
 
-Wrapper.defaultProps = {
+FadeDiv.defaultProps = {
     theme: {
         opacity: "1",
         transform: "translateX(0)"
@@ -148,7 +153,7 @@ display: flex;
 left: 0;
 transform: rotate(90deg);
 opacity: .4;
-margin-top: 7%;
+margin-top: calc(100px + 7%);
 div{
     transform: rotate(180deg);
     margin: 0 10px;
@@ -167,6 +172,11 @@ a{
         border-bottom: 2px solid;
     }
     
+}
+@media (max-width:1100px){
+    transform: rotate(-180deg);
+    margin-top: 10px;
+    z-index: 1000;
 }
 `
 const NavLink = styled.div`
@@ -237,13 +247,14 @@ class IndexPage extends React.Component {
     console.log("index",transitionStatus, entry, exit)
     
     return (
-        <Wrapper ref={this.homeref} theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
-            <SEO title="Home" />
+        <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <NavOverlay >
                 <NavLink onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})} theme={this.state.scroll ? undefined : active}>Home</NavLink>
                 {/* <div>Skills</div> */}-
                 <NavLink onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll ? active : undefined} >Projects</NavLink>
             </NavOverlay>
+        <Wrapper ref={this.homeref} >
+            <SEO title="Home" />
             <AniDiv >
                
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
@@ -292,6 +303,7 @@ class IndexPage extends React.Component {
             
             
         </Wrapper>
+        </FadeDiv>
     )
 }
 }

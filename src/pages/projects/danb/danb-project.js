@@ -10,6 +10,11 @@ import Img from "gatsby-image"
 import planninggif from '../menco/planningdemo.gif'
 import responsivegif from '../menco/responsivedesign.gif'
 
+const FadeDiv = styled.div`
+opacity: ${props => props.theme.opacity};
+transition: .3s;
+`
+
 const Wrapper = styled.div`
 transition: .3s;
 opacity: ${props => props.theme.opacity};
@@ -37,7 +42,7 @@ h2{
 }
 `
 
-Wrapper.defaultProps = {
+FadeDiv.defaultProps = {
     theme: {
         opacity: "1",
         transform: "translateX(0)"
@@ -142,7 +147,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
     const post = data.markdownRemark.frontmatter
     var projectImages = data.images.nodes.map(image => ({original: image.childImageSharp.fluid.src}))
     return(
-        <div>
+        <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <TextOverlay><h1>Coming Soon</h1></TextOverlay>
             <NavOverlay>
                 <SLink to="/"
@@ -159,7 +164,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                     Contact
                 </SLink>
             </NavOverlay>
-        <Wrapper theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
+        <Wrapper >
             <SEO title="danb" />
             
             
@@ -205,7 +210,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 Back to the homepage
             </TransitionLink>
         </Wrapper>
-        </div>
+        </FadeDiv>
     )
 }
 
