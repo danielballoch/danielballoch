@@ -64,60 +64,60 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 //     })
 //   }
 
-exports.createPages = ({ actions, graphql }) => {
-    const {createPage} = actions;
+// exports.createPages = ({ actions, graphql }) => {
+//     const {createPage} = actions;
 
 
-return new Promise((resolve, reject) => {
-    const projectPostTemplate = path.resolve(`src/templates/projectPageTem.js`);
-    // const projectTagPage = path.resolve('src/templates/productTags.jsx');
+// return new Promise((resolve, reject) => {
+//     const projectPostTemplate = path.resolve(`src/templates/projectPageTem.js`);
+//     // const projectTagPage = path.resolve('src/templates/productTags.jsx');
 
     
-    // const replacePath = path => (path === `/` ? path : path.replace(/\/$/,``))
+//     // const replacePath = path => (path === `/` ? path : path.replace(/\/$/,``))
 
-    resolve(
-         graphql(`{
-            projects: allMarkdownRemark(
-                filter: {fields: {collection: {eq: "projects"}}}
-                sort: { order: DESC, fields: [frontmatter___date] }
-                limit: 1000
-                ){
-                edges {
-                    node {
-                        fileAbsolutePath
-                        id
-                        frontmatter {
-                            title
-                            path
-                        }
-                    }
-                }
-            }      
-        }`).then(result => {
-        if (result.errors){
-            return reject(result.errors);
-        }
+//     resolve(
+//          graphql(`{
+//             projects: allMarkdownRemark(
+//                 filter: {fields: {collection: {eq: "projects"}}}
+//                 sort: { order: DESC, fields: [frontmatter___date] }
+//                 limit: 1000
+//                 ){
+//                 edges {
+//                     node {
+//                         fileAbsolutePath
+//                         id
+//                         frontmatter {
+//                             title
+//                             path
+//                         }
+//                     }
+//                 }
+//             }      
+//         }`).then(result => {
+//         if (result.errors){
+//             return reject(result.errors);
+//         }
 
-        const projects = result.data.projects.edges;
+//         const projects = result.data.projects.edges;
 
-        projects.forEach(({node}) => {
-            // const path = node.frontmatter.path;
+//         projects.forEach(({node}) => {
+//             // const path = node.frontmatter.path;
 
-            createPage({
-                path: node.frontmatter.path,
-                component: projectPostTemplate,
-                context: {
-                    contextpathSlug: node.frontmatter.path,
-                    // Pass the current directory of the project as regex in context so that the GraphQL query can filter by it
-                    absolutePathRegex: `/^${path.dirname(node.fileAbsolutePath)}/`,
-                }
+//             createPage({
+//                 path: node.frontmatter.path,
+//                 component: projectPostTemplate,
+//                 context: {
+//                     contextpathSlug: node.frontmatter.path,
+//                     // Pass the current directory of the project as regex in context so that the GraphQL query can filter by it
+//                     absolutePathRegex: `/^${path.dirname(node.fileAbsolutePath)}/`,
+//                 }
                 
-            });
-        });
+//             });
+//         });
         
 
-    })
-    )
-}
-)
-}
+//     })
+//     )
+// }
+// )
+// }

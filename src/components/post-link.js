@@ -1,5 +1,5 @@
 import React from "react"
-import Link from 'gatsby-plugin-transition-link'
+import TransitionLink from 'gatsby-plugin-transition-link'
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 
@@ -49,7 +49,7 @@ const SubText = styled.div`
 color: black;
 text-decoration: none;
 `
-const SLink = styled(Link)`
+const SLink = styled(TransitionLink)`
 text-decoration: none;
 `
 
@@ -88,7 +88,10 @@ class PostListing extends React.Component {
             <Wrapper>
                 {
                 postList.map(post => (
-                    <SLink to={post.path} key={post.title}>
+                    <SLink to={post.path} key={post.title}
+                    exit={{length: .5, state: {pass: true}}}
+                    entry={{length: .3, delay: .5, state: {pass: false}}}
+                    >
                         <InsideWrapper>
                             <Image className="image" fluid={post.image.childImageSharp.fluid}/>
                             <SubText>

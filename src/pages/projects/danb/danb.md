@@ -1,12 +1,11 @@
 ---
-posttype: "project"
-path: "/projects/Menco"
-image: "./homepage.jpg"
+path: "/projects/danb/danb-project/"
+image: "./danbhero.jpg"
 date: "2020-10-15"
-title: "Menco"
-service: "Brand Identity, Ecommerce"
+title: "danb"
+service: "Branding, Progressive Web App"
 published: true
-tags: ['Brand Identity', 'Ecommerce',]
+tags: ['Brand Identity', 'Progressive Web App',]
 
 intro: "Menco is a mens fashion brand I created aimed at supplying smart dress to young professionals.
 One of the core aims is to make shopping and getting dressed in the morning rush as simple as possible for this demographic.
@@ -39,9 +38,7 @@ Markdown was used for the product and blog content and these pages, as well as t
 Snipcart was used for cart functionality and as such I didn't write a lot of backend code, however I did filter through the content using GraphQl, a data query and manipulation language for APIs.
 
 Netlify CMS has been integrated and the project is easy to update, however after finishing the project and doing more research around the practicalitys of Ecommerce in the real world I would opt for a different development stack, alas the project was a great learning experience with lot's of transferable knowlede gained and I succeded in my challenge of creating a full blown static eccomerece on gatsby. If you have any feedback or questions I'd love to hear from you, Daniel. "
-
 ---
-
 
 
 

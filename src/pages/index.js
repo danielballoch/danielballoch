@@ -18,20 +18,21 @@ min-height: 100vh;
 width: 100%;
 height: 100%;
 padding: 100px 1.0875rem 1.45rem;
+transition: .3s;
+opacity: ${props => props.theme.opacity};
 `
 
 const AniDiv = styled.div`
 display: flex;
 margin: 0 auto;
 justify-content: space-evenly;
-opacity: ${props => props.theme.opacity};
 transition: .3s;
 /* max-width: 960px; */
 max-width: 1080px;
 height: 100vh;
 `
 
-AniDiv.defaultProps = {
+Wrapper.defaultProps = {
     theme: {
         opacity: "1",
         transform: "translateX(0)"
@@ -236,14 +237,14 @@ class IndexPage extends React.Component {
     console.log("index",transitionStatus, entry, exit)
     
     return (
-        <Wrapper ref={this.homeref}>
+        <Wrapper ref={this.homeref} theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <SEO title="Home" />
             <NavOverlay >
                 <NavLink onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})} theme={this.state.scroll ? undefined : active}>Home</NavLink>
                 {/* <div>Skills</div> */}-
                 <NavLink onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll ? active : undefined} >Projects</NavLink>
             </NavOverlay>
-            <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
+            <AniDiv >
                
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
                     <h2>Hey, I'm Daniel. A front-end developer whose always learning and building.</h2>
@@ -263,13 +264,6 @@ class IndexPage extends React.Component {
                     </SocialDiv>
                     </p>
 
-                    <TransitionLink 
-                    to="/page-2/" 
-                    exit={{length: .5, state: {pass: true}}}
-                    entry={{length: .3, delay: .5, state: {pass: false}}}
-                    >
-                        Project Wall
-                    </TransitionLink>
 
                 </HeroText> 
                 <HeroImage>
