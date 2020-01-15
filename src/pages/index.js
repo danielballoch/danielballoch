@@ -263,6 +263,9 @@ class IndexPage extends React.Component {
                     <p><b>mail:</b> danielkingballoch@gmail.com</p>
                     <p>
                     <SocialDiv>
+                        <a href="https://github.com/danielballoch">                     
+                        <SocialIcon fluid={data.github.childImageSharp.fluid} />
+                        </a>  
                         <a href="https://dribbble.com/danielballoch">                     
                         <SocialIcon fluid={data.dribble.childImageSharp.fluid} />
                         </a>   
@@ -335,6 +338,13 @@ export const Query = graphql`
         }
       }
       linkedin: file(relativePath: { eq: "social-icons/linkediniconRE.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      github: file(relativePath: { eq: "social-icons/githubRE.png" }) {
         childImageSharp {
           fluid(maxWidth: 50) {
             ...GatsbyImageSharpFluid
