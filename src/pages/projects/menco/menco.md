@@ -12,9 +12,9 @@ tags: ['Brand Identity', 'Ecommerce',]
 intro1: "Menco is a mens fashion brand I created aimed at supplying smart dress to young professionals.
 One of the core aims is to make shopping and getting dressed in the morning rush as simple as possible for this demographic."
 intro2: "
-It stocks essential smart casual clothing within the medium range price bracket embracing essential color tones and well fitting clothing, tees, shorts, jeans, hemleys, polos, pants, shirts etc."
+It stocks essential smart casual clothing within a medium price range, embracing essential color tones and well fitting clothing, tees, shorts, jeans, henleys, polos, pants, shirts etc."
 intro3: "
-This project included Brand Identity, simple logo design, Planning, Prototyping and Eccomerce web design.
+This project included Brand Identity, simple logo design, Planning, Prototyping and Ecommerce web design.
 The site can be viewed online at "
 
 heading1: "Brand Identity & Planning"
@@ -27,21 +27,21 @@ A rough sitemap was created. Throughout this stage I also researched ecommerce b
 
 heading2: "Prototyping & Design"
 
-paragraph2_1: "Once design documents were completed I started my prototyping in adobe xd and photoshop. Basic mobile layouts for each page were created based on the design docs, and then desktop layouts as well as some hero logo and subtitle options were also created, all of which were revisioned after feedback was gathered."
+paragraph2_1: "Once design documents were completed I started my prototyping in adobe xd and photoshop. Basic mobile layouts for each page were created based on the design docs, and then desktop layouts as well as some hero logo and subtitle options were also created, all of which were revised after feedback was gathered."
 paragraph2_2: " At this point I decided to start working on the homepage in html and would come back later to prototype other sections or just use the plan documents, mobile draft and html depending on the complexity of the page."
 
 heading3: "Ecommerce Website Development"
 
 paragraph3_1: "
-Menco was coded to be responsive and work well from mobile to desktop and everything inbetween, text and images scale, animated hamburger menus are used, lazy loading and image optimization etc. The best examples of this are the nav bar, products page and customer care page."
+Menco was coded to be responsive and work well from mobile to desktop and everything in between, text and images scale, animated hamburger menus are used, lazy loading and image optimization etc. The best examples of this are the nav bar, products page and customer care page."
 
 paragraph3_2: "
 Now some technical info:
-I've been interested in static site generators and used this project to test their limits. Challinging myself to create a static eccomerce site, Gatsby, a react based framework, is the static site generator I opted for. After some research react seemed to be the most practical and used JavaScript library, which I thought would transfer well to future projects, and gatsby was the static site generator I saw the most potential in (although Next.js was a close second). "
+I've been interested in static site generators and used this project to test their limits. Challenging myself to create a static ecommerce site, Gatsby, a react based framework, is the static site generator I opted for. After some research react seemed to be the most practical and used JavaScript library, which I thought would transfer well to future projects, and gatsby was the static site generator I saw the most potential in (although Next.js was a close second). "
 
 paragraph3_3: "
 Markdown was used for the product and blog content and these pages, as well as the list components to display their links, were created programmatically.
-Snipcart was used for cart functionality and as such I didn't write a lot of backend code, however I did filter through the content using GraphQl, a data query and manipulation language for APIs. Also I used emotion for css, to make things easier. Netlify CMS has been integrated and the project is easy to update, however after finishing the project and doing more research around the practicalitys of Ecommerce in the real world I would opt for a different development stack. 
+Snipcart was used for cart functionality and as such I didn't write a lot of backend code, however I did filter through the content using GraphQl, a data query and manipulation language for APIs. Also I used emotion for css, to make things easier. Netlify CMS has been integrated and the project is easy to update, however after finishing the project and doing more research around the practicalitiess of ecommerce in the real world (inventory managment, sales, etc) I would opt for a different development stack. 
 "
 paragraph3_4: "
  The project was a great learning experience with lot's of transferable knowlede gained: planning, design, pwas, react, apis, graphql, cms, JAMstack etc. and I succeded in my challenge of creating a full blown static eccomerece on gatsby. If you have any feedback or questions I'd love to hear from you, Daniel. "
