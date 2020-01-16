@@ -262,7 +262,7 @@ class IndexPage extends React.Component {
                
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
                     <h2>Hey, I'm Daniel. A front-end developer whose always learning and building.</h2>
-                    <p><b>ph:</b> +64 022 0780868</p>
+                    <p><b>ph:</b> (+64) 022 0780868</p>
                     <p><b>email:</b> danielkingballoch@gmail.com</p>
                     <p><b>tools:</b> JS, React, html, css, gatsby</p>
                     <p>
