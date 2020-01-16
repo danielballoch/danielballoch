@@ -131,8 +131,6 @@ filter: grayscale(50%);
 opacity: .8;
 transition: .5s;
 /* scale: .6; */
-
-
 `
 const MainIconDiv = styled.div`
 display: flex;
@@ -192,7 +190,8 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             <SEO title="Menco" />
                 <h1>{post.title}</h1>
                 
-                <p>{post.service}</p>
+                <p><b>Tasks:</b> {post.service}</p>
+                <p><b>Tools:</b> React, JS, css, html, Gatsby, Snipcart, Netlify CMS</p>
                 <hr/>
     
             <MainIconDiv>

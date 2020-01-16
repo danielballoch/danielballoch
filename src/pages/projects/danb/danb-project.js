@@ -146,6 +146,44 @@ transform: rotate(-45deg);
 `
 
 
+const SocialIcon = styled(Img)`
+width: 50px;
+margin-right: 5px;
+filter: grayscale(50%);
+opacity: .8;
+transition: .5s;
+/* scale: .6; */
+`
+
+const MainIconDiv = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+/* justify-content: space-evenly; */
+width: 100%;
+`
+const IconDiv = styled(MainIconDiv)`
+min-width: 100px;
+border: 1px solid black;
+border-radius: 30px;
+padding: 0 15px 3px 10px;
+opacity: 0.5;
+transition: .3s;
+
+:hover{
+    filter: grayscale(0);
+    opacity: 1;
+}
+`
+const IconLink = styled.a`
+color: black;
+text-decoration: none; 
+:nth-of-type(1){
+    margin-right: 5vw;
+}
+`
+
+
 const MencoProject = ({data, transitionStatus, entry, exit}) => {
     console.log(data)
     console.log("page2", transitionStatus, entry, exit)
@@ -176,8 +214,15 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
 
             <h1>{post.title}</h1>
             <a href="www.mencoapparel.com">www.mencoapparel.com</a>
-            <p>{post.service}</p>
+            <p><b>Tasks:</b> {post.service}</p>
+            <p><b>Tools:</b> React, JS, css, html, Gatsby, Snipcart, Netlify CMS</p>
             <hr></hr>
+            <MainIconDiv>
+                <IconLink href="https://www.danbwebdesign.com"><IconDiv><SocialIcon fluid={data.menco.childImageSharp.fluid}/><div>View Site</div></IconDiv></IconLink>
+                <IconLink href={post.gitlink}><IconDiv><SocialIcon fluid={data.github.childImageSharp.fluid}/><div>View Repo</div></IconDiv></IconLink>
+            </MainIconDiv>
+
+
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
             <p>{post.intro1}</p>
@@ -264,6 +309,20 @@ export const query = graphql`
               }
             }
           }
+    }
+    github: file(relativePath: { eq: "social-icons/githubRE.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    menco: file(relativePath: { eq: "social-icons/mencoicon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
     }
   }
   `

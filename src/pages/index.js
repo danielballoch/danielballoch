@@ -74,6 +74,9 @@ p:nth-of-type(2){
 p:nth-of-type(3){
     transition:2s;
 }
+p:nth-of-type(4){
+    transition:2.5s;
+}
 @media (max-width: 500px) {
     width: 100%;
 }
