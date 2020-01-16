@@ -41,7 +41,7 @@ I've been interested in static site generators and used this project to test the
 
 paragraph3_3: "
 Markdown was used for the product and blog content and these pages, as well as the list components to display their links, were created programmatically.
-Snipcart was used for cart functionality and as such I didn't write a lot of backend code, however I did filter through the content using GraphQl, a data query and manipulation language for APIs. Also I used emotion for css, to make things easier. Netlify CMS has been integrated and the project is easy to update, however after finishing the project and doing more research around the practicalitiess of ecommerce in the real world (inventory managment, sales, etc) I would opt for a different development stack. 
+Snipcart was used for cart functionality and as such I didn't write a lot of backend code, however I did filter through the content using GraphQl, a data query and manipulation language for APIs. A great example of this is the responsive social grid on the homepage which pulls images and their link, from the instagram api, and displays them on the site. Also I used emotion for css, to make things easier. Netlify CMS has been integrated and the project is easy to update, however after finishing the project and doing more research around the practicalitiess of ecommerce in the real world (inventory managment, sales, etc) I would opt for a different development stack. 
 "
 paragraph3_4: "
  The project was a great learning experience with lot's of transferable knowlede gained: planning, design, pwas, react, apis, graphql, cms, JAMstack etc. and I succeded in my challenge of creating a full blown static eccomerece on gatsby. If you have any feedback or questions I'd love to hear from you, Daniel. "

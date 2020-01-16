@@ -211,6 +211,7 @@ class IndexPage extends React.Component {
       componentDidMount() {
         //index page is currently only page which has non-top white
         //if more added, create getScrollTarget fuction 
+        
         window.addEventListener('scroll', this.handleScroll);
     };
     

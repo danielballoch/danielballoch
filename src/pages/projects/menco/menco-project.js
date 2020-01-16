@@ -168,6 +168,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
     console.log(data)
     console.log("page2", transitionStatus, entry, exit)
     const post = data.markdownRemark.frontmatter
+    
     var projectImages = data.images.nodes.map(image => ({original: image.childImageSharp.fluid.src}))
     return(
         <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
@@ -215,7 +216,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             <AniDiv3 theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
                 <h2>{post.heading2}</h2>
                 <ImgDiv>
-                    <Img fluid={data.images.nodes[2].childImageSharp.fluid} />
+                    <Img fluid={data.images.nodes[3].childImageSharp.fluid} />
                 </ImgDiv>
                 <p>{post.paragraph2_1}</p>
                 <p>{post.paragraph2_2}</p>
@@ -225,6 +226,9 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 <img src={responsivegif}/>
                 <p>{post.paragraph3_1}</p>
                 <p>{post.paragraph3_2}</p>
+                <ImgDiv>
+                    <Img fluid={data.images.nodes[1].childImageSharp.fluid} />
+                </ImgDiv>
                 <p>{post.paragraph3_3}</p>
                 <p>{post.paragraph3_4}</p>
             </AniDiv4>
