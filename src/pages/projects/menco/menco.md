@@ -1,6 +1,7 @@
 ---
 posttype: "project"
 path: "/projects/menco/menco-project/"
+gitlink: "https://github.com/danielballoch/ecom"
 image: "./homepage.jpg"
 date: "2020-10-15"
 title: "Menco"

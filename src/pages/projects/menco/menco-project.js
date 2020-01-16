@@ -124,6 +124,45 @@ const exiting = {
     translate: "translateX(20%)"
 }
 
+const SocialIcon = styled(Img)`
+width: 50px;
+margin-right: 5px;
+filter: grayscale(50%);
+opacity: .8;
+transition: .5s;
+/* scale: .6; */
+
+
+`
+const MainIconDiv = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+/* justify-content: space-evenly; */
+width: 100%;
+`
+const IconDiv = styled(MainIconDiv)`
+min-width: 100px;
+border: 1px solid black;
+border-radius: 30px;
+padding: 0 15px 3px 10px;
+opacity: 0.5;
+transition: .3s;
+
+:hover{
+    filter: grayscale(0);
+    opacity: 1;
+}
+`
+const IconLink = styled.a`
+color: black;
+text-decoration: none; 
+:nth-of-type(1){
+    margin-right: 5vw;
+}
+`
+
+
 
 
 
@@ -151,17 +190,21 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             </NavOverlay>
         <Wrapper >
             <SEO title="Menco" />
-            
-
-            <h1>{post.title}</h1>
-            <a href="www.mencoapparel.com">www.mencoapparel.com</a>
-            <p>{post.service}</p>
-            <hr></hr>
+                <h1>{post.title}</h1>
+                
+                <p>{post.service}</p>
+                <hr/>
+    
+            <MainIconDiv>
+                <IconLink href="https://www.mencoapparel.com"><IconDiv><SocialIcon fluid={data.menco.childImageSharp.fluid}/><div>View Site</div></IconDiv></IconLink>
+                <IconLink href={post.gitlink}><IconDiv><SocialIcon fluid={data.github.childImageSharp.fluid}/><div>View Repo</div></IconDiv></IconLink>
+            </MainIconDiv>
+            <br/>
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
             <p>{post.intro1}</p>
             <p>{post.intro2}</p>
-            <p>{post.intro3} <a href="www.mencoapparel.com">www.mencoapparel.com</a></p>
+            <p>{post.intro3} <a href="https://www.mencoapparel.com">www.mencoapparel.com</a></p>
                 
             </AniDiv>
             <AniDiv2 theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
@@ -208,6 +251,7 @@ export const query = graphql`
         html
       frontmatter {
             title
+            gitlink
             service
             date
             intro1
@@ -242,6 +286,20 @@ export const query = graphql`
               }
             }
           }
+    }
+    github: file(relativePath: { eq: "social-icons/githubRE.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+    }
+    menco: file(relativePath: { eq: "social-icons/mencoicon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
     }
   }
   `
