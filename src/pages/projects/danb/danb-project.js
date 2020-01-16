@@ -229,6 +229,7 @@ export const query = graphql`
         html
       frontmatter {
             title
+            gitlink
             service
             date
             intro1

@@ -1,6 +1,7 @@
 ---
 path: "/projects/danb/danb-project/"
 image: "./danbheroRE.jpg"
+gitlink: "https://github.com/danielballoch/ecom"
 date: "2020-10-15"
 title: "danb"
 service: "Branding, Progressive Web App"

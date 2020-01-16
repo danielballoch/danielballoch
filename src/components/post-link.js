@@ -41,6 +41,7 @@ const InsideWrapper =styled.div`
 }
 padding: 10px;
 background: whitesmoke;
+transition: .3s;
 :hover {
  filter: brightness(97%);
 }
@@ -52,6 +53,34 @@ text-decoration: none;
 const SLink = styled(TransitionLink)`
 text-decoration: none;
 `
+const RepoDiv = styled.div`
+font-size: 20px;
+font-family: 'Open Sans';
+transition: .5s;
+opacity: 0;
+/* display: none; */
+position: absolute;
+z-index: 999;
+background: whitesmoke;
+border: 2px solid whitesmoke;
+border-radius: 0 0 10px 10px;
+width: 140px;
+text-align: center;
+transform: rotate(-90deg) translate(-120px,-50px);
+color: black;
+:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: rotate(-90deg) translate(-120px,-45px);
+}
+`
+const Wrap = styled.div`
+:hover {
+    div {
+        opacity: 1;
+        /* display: block; */
+    }
+}
+`
 
 class PostListing extends React.Component {
     getPostList() {
@@ -59,13 +88,13 @@ class PostListing extends React.Component {
         this.props.postEdges.forEach(postEdge => {
             postList.push({
                 path: postEdge.node.frontmatter.path,
+                gitlink: postEdge.node.frontmatter.gitlink,
                 tags: postEdge.node.frontmatter.tags,
                 image: postEdge.node.frontmatter.image,
                 title: postEdge.node.frontmatter.title,
                 service: postEdge.node.frontmatter.service,
                 date: postEdge.node.frontmatter.date,
                 excerpt: postEdge.node.excerpt,
-                timeToRead: postEdge.node.timeToRead
             });
         });
         return postList;
@@ -83,16 +112,19 @@ class PostListing extends React.Component {
 
     render(){
         const postList = this.getPostList();
-        
+        console.log(postList);
         return(
             <Wrapper>
                 {
                 postList.map(post => (
+                    <Wrap>
+                    <a href={post.gitlink}><RepoDiv>view repo</RepoDiv></a>
                     <SLink to={post.path} key={post.title}
                     exit={{length: .5, state: {pass: true}}}
                     entry={{length: .3, delay: .5, state: {pass: false}}}
                     >
                         <InsideWrapper>
+                            
                             <Image className="image" fluid={post.image.childImageSharp.fluid}/>
                             <SubText>
                                 <h1>{post.title}</h1>
@@ -100,6 +132,7 @@ class PostListing extends React.Component {
                             </SubText>
                         </InsideWrapper>
                     </SLink>
+                    </Wrap>
                 ))
                 }
             </Wrapper>
