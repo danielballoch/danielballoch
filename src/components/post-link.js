@@ -118,7 +118,7 @@ class PostListing extends React.Component {
                 {
                 postList.map(post => (
                     <Wrap>
-                    <a href={post.gitlink}><RepoDiv>view repo</RepoDiv></a>
+                    {/* <a href={post.gitlink}><RepoDiv>view repo</RepoDiv></a> */}
                     <SLink to={post.path} key={post.title}
                     exit={{length: .5, state: {pass: true}}}
                     entry={{length: .3, delay: .5, state: {pass: false}}}

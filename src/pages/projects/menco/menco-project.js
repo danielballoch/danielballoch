@@ -168,8 +168,6 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
     console.log(data)
     console.log("page2", transitionStatus, entry, exit)
     const post = data.markdownRemark.frontmatter
-    
-    var projectImages = data.images.nodes.map(image => ({original: image.childImageSharp.fluid.src}))
     return(
         <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <NavOverlay>
