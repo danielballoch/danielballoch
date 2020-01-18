@@ -188,7 +188,6 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
         <Wrapper >
             <SEO title="Menco" />
                 <h1>{post.title}</h1>
-                
                 <p><b>Tasks:</b> {post.service}</p>
                 <p><b>Tools:</b> React, JS, css, html, Gatsby, Snipcart, Netlify CMS</p>
                 <hr/>
@@ -202,7 +201,8 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
             <p>{post.intro1}</p>
             <p>{post.intro2}</p>
-            <p>{post.intro3} <a href="https://www.mencoapparel.com">www.mencoapparel.com</a></p>
+            <p>{post.intro3}</p>
+            <p>{post.intro4}</p>
                 
             </AniDiv>
             <AniDiv2 theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
@@ -258,6 +258,7 @@ export const query = graphql`
             intro1
             intro2
             intro3
+            intro4
             heading1
             paragraph1_1
             paragraph1_2

@@ -9,19 +9,21 @@ service: "Brand Identity, Ecommerce"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 
-intro1: "Menco is a mens fashion brand I created aimed at supplying smart dress to young professionals.
-One of the core aims is to make shopping and getting dressed in the morning rush as simple as possible for this demographic."
+intro1: "Menco is a mens fashion brand I created for young professionals. It's aimed at making getting dressed in the morning rush as simple as possible, creating pride around looking sharp for business and, of course, providing smart clothing to this target audience" 
 intro2: "
-It stocks essential smart casual clothing within a medium price range, embracing essential color tones and well fitting clothing, tees, shorts, jeans, henleys, polos, pants, shirts etc."
+Challenge: Creating a professional ecommerce website, for the customer demographic, which provides value to customers and markets clothing effectivly."
 intro3: "
-This project included Brand Identity, simple logo design, Planning, Prototyping and Ecommerce web design.
-The site can be viewed online at "
+Solution: I broke the project into stages and did my best to research, find best practices and use examples of great ecommerce website already out there in order to meet the challenge outlined. A quick break down of the hompage should show how I did this:" 
+
+intro4: "
+Above the fold, we have a hero image (model in Menco attire) and text (making smart attire effortless), drawing the customer in, portraying an ideal and showing the brand/shop as a ladder toward this ideal. Then, featured products are shown within one scroll to take advantage of the buying mindset and get customers excited. I opted for photos of models in the clothing as researched showed this is a better draw. Value is provided through the blog section, which aligns customers with the brand and builds toward the company vision. The social section is at the bottom in a funnel like design and again reinforces the idea of looking smart for business and prompts the user to engage in social media with a chance to be featured. Last but not least importent information links are shown in the familar spot on the page footer and layed out from most needed to least.  
+"
 
 heading1: "Brand Identity & Planning"
 
 paragraph1_1: "Step one was filling out a Brand Identity document I created based on research and previous projects, the aim of which is to gather a base understanding of the project and set the stage for planning and prototyping."
 paragraph1_2: "
-First I wrote the company vision, customer demographic and brand personality. Then brainstormed names, eventuelly coming up with Menco.
+First I wrote the company vision, customer demographic and brand personality. Then brainstormed names, eventually coming up with Menco.
 Layout, Font, Icon and Photography to be used were broken down into their purpose and seperate documents created for selection or creation. 
 A rough sitemap was created. Throughout this stage I also researched ecommerce best practices and made a list of some similar websites to get a sense of industry standards, compitition and to make sure I was creating something original." 
 
