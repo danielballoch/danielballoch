@@ -11,12 +11,12 @@ tags: ['Brand Identity', 'Ecommerce',]
 
 intro1: "Menco is a mens fashion brand I created for young professionals. It's aimed at making getting dressed in the morning rush as simple as possible, creating pride around looking sharp for business and, of course, providing smart clothing to this target audience" 
 intro2: "
-Challenge: Creating a professional ecommerce website, for the customer demographic, which provides value to customers and markets clothing effectivly."
+Create a professional ecommerce website, for the customer demographic, which provides value to customers and markets clothing effectivly."
 intro3: "
-Solution: I broke the project into stages and did my best to research, find best practices and use examples of great ecommerce website already out there in order to meet the challenge outlined. A quick break down of the hompage should show how I did this:" 
+I broke the project into stages and did my best to research, find best practices and break down methods of great ecommerce websites already out there, in order to meet the challenge outlined. A quick break down of the hompage should show how I meet this goal:" 
 
 intro4: "
-Above the fold, we have a hero image (model in Menco attire) and text (making smart attire effortless), drawing the customer in, portraying an ideal and showing the brand/shop as a ladder toward this ideal. Then, featured products are shown within one scroll to take advantage of the buying mindset and get customers excited. I opted for photos of models in the clothing as researched showed this is a better draw. Value is provided through the blog section, which aligns customers with the brand and builds toward the company vision. The social section is at the bottom in a funnel like design and again reinforces the idea of looking smart for business and prompts the user to engage in social media with a chance to be featured. Last but not least importent information links are shown in the familar spot on the page footer and layed out from most needed to least.  
+Above the fold, we have a hero image (model in Menco attire) and text (making smart attire effortless), drawing the customer in, portraying an ideal and showing the brand/shop as a ladder toward this ideal. Then, featured products are shown within one scroll to take advantage of the buying mindset and get customers excited. I opted for photos of models in the clothing as research showed this is a better draw. Value is provided through the blog section, which aligns customers with the brand and educates them on clothing selection, building towards the company vision. The social section is at the bottom in a funnel like design and again reinforces the idea of looking smart for business and prompts users to engage in social media with a chance to be featured. Last but not least importent links are shown in the familar spot on the page footer and sorted from most needed/clicked to least.  
 "
 
 heading1: "Brand Identity & Planning"

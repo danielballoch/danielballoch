@@ -198,11 +198,14 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             </MainIconDiv>
             <br/>
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
-            <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
             <p>{post.intro1}</p>
-            <p>{post.intro2}</p>
-            <p>{post.intro3}</p>
+            <p><b>Challenge: </b>{post.intro2}</p>
+            <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
+            
+            <p><b>Solution: </b>{post.intro3}</p>
             <p>{post.intro4}</p>
+            <p>view the site live: <a href="http://www.mencoapparel.com">http://www.mencoapparel.com</a>  or see the process in detail below</p>
+
                 
             </AniDiv>
             <AniDiv2 theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
