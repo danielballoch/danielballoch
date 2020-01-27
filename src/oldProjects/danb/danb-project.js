@@ -2,8 +2,8 @@ import React from "react"
 import Link from 'gatsby-plugin-transition-link'
 import { graphql } from "gatsby"
 import TransitionLink from 'gatsby-plugin-transition-link'
-import Layout from "../../../components/layout"
-import SEO from "../../../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import styled from '@emotion/styled'
 import Img from "gatsby-image"
 
