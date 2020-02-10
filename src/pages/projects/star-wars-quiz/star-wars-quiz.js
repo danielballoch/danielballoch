@@ -198,7 +198,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <p>{post.intro1}</p>
             <p><b>Challenge: </b>{post.intro2}</p>
-            <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
+            <Img fluid={data.images.nodes[1].childImageSharp.fluid} />
             
             <p><b>Solution: </b>{post.intro3}</p>
             <p>{post.intro4}</p>
@@ -211,8 +211,15 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 <p>{post.paragraph1_1}</p>
                 <p>{post.paragraph1_2}</p>
                
-                    <Img fluid={data.images.nodes[1].childImageSharp.fluid} />
-                <p>{post.paragraph1_3}</p>
+                <Img fluid={data.images.nodes[2].childImageSharp.fluid} />
+                <h2>Logo Development</h2>
+                <ImgDiv>
+                    <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
+                </ImgDiv>
+                <p>{post.paragraph1_3}</p> 
+                
+                <p>{post.paragraph1_4}</p>
+                    
             </AniDiv4>
             <TransitionLink 
                 to="" 
@@ -247,6 +254,7 @@ export const query = graphql`
             paragraph1_1
             paragraph1_2
             paragraph1_3
+            paragraph1_4
       }
     }
 
@@ -273,7 +281,7 @@ export const query = graphql`
           }
         }
     }
-    menco: file(relativePath: { eq: "social-icons/mencoicon.png" }) {
+    menco: file(relativePath: { eq: "social-icons/starwarsicon.png" }) {
         childImageSharp {
           fluid(maxWidth: 50) {
             ...GatsbyImageSharpFluid

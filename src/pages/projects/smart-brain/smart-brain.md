@@ -6,6 +6,7 @@ image: "./steve.PNG"
 date: "2020-02-27"
 title: "Smart-Brain"
 service: "Full stack app development"
+tools: "React, Express, PostgreSQL"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 

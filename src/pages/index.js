@@ -265,7 +265,7 @@ class IndexPage extends React.Component {
                     <h2>Hey, I'm Daniel. A front-end developer whose always learning and building.</h2>
                     <p><b>ph:</b> (+64) 022 0780868</p>
                     <p><b>email:</b> danielkingballoch@gmail.com</p>
-                    <p><b>tools:</b> JS, React, html, css, gatsby</p>
+                    <p><b>tools:</b> JS, React, html, css, Gatsby</p>
                     <p>
                     <SocialDiv>
                         <a href="https://github.com/danielballoch">                     
@@ -367,6 +367,7 @@ export const Query = graphql`
                 gitlink
                 tags
                 service
+                tools
                 date(formatString: "DD MMMM, YYYY")
                 image {
                   childImageSharp {

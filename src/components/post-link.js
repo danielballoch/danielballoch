@@ -94,6 +94,7 @@ class PostListing extends React.Component {
                 image: postEdge.node.frontmatter.image,
                 title: postEdge.node.frontmatter.title,
                 service: postEdge.node.frontmatter.service,
+                tools: postEdge.node.frontmatter.tools,
                 date: postEdge.node.frontmatter.date,
                 excerpt: postEdge.node.excerpt,
             });
@@ -129,7 +130,8 @@ class PostListing extends React.Component {
                             <Image className="image" fluid={post.image.childImageSharp.fluid}/>
                             <SubText>
                                 <h1>{post.title}</h1>
-                                {post.service}                           
+                                {post.service}  
+                                                       
                             </SubText>
                         </InsideWrapper>
                     </SLink>

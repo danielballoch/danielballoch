@@ -5,7 +5,7 @@ gitlink: "https://github.com/danielballoch/star-wars-species-quiz"
 image: "./starwars-quizz.jpg"
 date: "2020-01-27"
 title: "Starwars Species Quiz"
-service: "Front End App Development"
+service: "App Development, Logo Design"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 
@@ -29,7 +29,11 @@ How does it work?
 The app is fairly simple and includes 4 basic stages. 1: data grabbed from api and converted to json. 2: user form is filled (or left pre-filled) and submitted, inputs are added to state. 3: a result is chosen via if statements and relevant image stored in state. 4: props (state) sent to resultTemplate page and page is displayed "
 
 paragraph1_3: "
- I could have made this app look better and wanted to add page transitions, animation, image optimization, extra features, etc. but opted to leave as is and continue on learning new things rather than spending more time on this, although it did serve its purpose. I learnt more about git, apis and I'm excited to learn more! If you have any feedback or questions I'd love to hear from you, Daniel. "
+Creating a logo in photoshop was quite fun. I used the same Starwars font as the apps hero text and blended in the outline style. I also stuck with the same colors from the app to keep branding consistent. A black eclipse was masked with a faded gradient and I overlayed a few layers with brush marks, playing with the blending options and adding an outer glow, as well as some color here and there, to give the impression of stars."
+
+paragraph1_4: "
+I could have made this app look better and wanted to add features such as page transitions, animation, image optimization, etc. but opted to leave as is and continue on learning new things rather than spending more time on this, although it did serve its purpose. I learnt more about git, apis and I'm excited to learn more! If you have any feedback or questions I'd love to hear from you, Daniel. 
+"
 
 ---
 
