@@ -5,9 +5,9 @@ gitlink: "https://github.com/danielballoch/ecom"
 image: "./homepage.jpg"
 date: "2020-10-15"
 title: "Menco"
-service: "Brand Identity, Ecommerce"
+service: "Brand Identity, Serverless Ecommerce"
 published: true
-tags: ['Brand Identity', 'Ecommerce',]
+tags: ['Brand Identity', 'Serverless Ecommerce',]
 
 intro1: "Menco is a mens fashion brand I created for young professionals. It's aimed at making getting dressed in the morning rush as simple as possible, creating pride around looking sharp for business and, of course, providing smart clothing to this target audience" 
 intro2: "

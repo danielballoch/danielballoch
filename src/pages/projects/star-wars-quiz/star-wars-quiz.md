@@ -5,7 +5,7 @@ gitlink: "https://github.com/danielballoch/star-wars-species-quiz"
 image: "./starwars-quizz.jpg"
 date: "2020-01-27"
 title: "Starwars Species Quiz"
-service: "App Development"
+service: "Front End App Development"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 
@@ -19,7 +19,7 @@ The styling of this app was aimed at staying true to the Starwars universe, the 
 "
 
 
-heading1: "App Development"
+heading1: "Front End App Development"
 
 paragraph1_1: "
 The app was coded to be responsive, although it was a quick one so It didn't have full fledged prototypes, a simple text document and an idea in my head is all I worked from. I kept the features minimal, so I could start learning more about the full stack sooner and make projects which I would be more excited about."

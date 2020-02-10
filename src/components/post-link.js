@@ -74,6 +74,7 @@ color: black;
 }
 `
 const Wrap = styled.div`
+padding: 20px 0;
 :hover {
     div {
         opacity: 1;
