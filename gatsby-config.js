@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Daniel Balloch`,
-    description: `Front end web designer skilled in discovery, prototyping, UI/UX, responsive design and eccomerce solutions. Call 022 0780868 or email
-    danielkingballoch@gmail.com for work inquiries.`,
+    description: `Front end web developer skilled in prototyping, UI/UX, responsive design and eccomerce solutions. Call 022 0780868 or email
+    danielkingballoch@gmail.com for inquiries.`,
     author: `@danielballoch`,
   },
   plugins: [

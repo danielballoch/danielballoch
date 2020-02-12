@@ -4,7 +4,7 @@ path: "/projects/star-wars-quiz/star-wars-quiz/"
 gitlink: "https://github.com/danielballoch/star-wars-species-quiz"
 image: "./starwars-quizz.jpg"
 date: "2020-01-27"
-title: "Starwars Species Quiz"
+title: "Starwars App"
 service: "App Development, Logo Design"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
