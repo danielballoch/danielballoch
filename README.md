@@ -28,7 +28,9 @@ match the clean design and purpose of the site, although I'm excited to expireme
         <li> npm install </li>
         <li> gatsby develop</li>
     </ol>
-    -keep in mind I still learning myself, if anyone has tips or advice I'd love to hear it. Happy coding!
+    Keep in mind I'm still learning myself, so these may not be best practises.
+    If anyones curious as to how something works flick me a message or if you have advice for me I'd love to hear it,
+    otherwise happy coding!
 </p>
 
 <br>
