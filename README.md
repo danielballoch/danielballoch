@@ -22,6 +22,14 @@
 <p>This was a quick two week project with planning in word, prototyping in adobe xd and coding in VSC (html, JavaScript, css, React)</p>
 <p>Page Animations were a new skill I added to my tool kit through this project, although the transitions added are fairly simple I think they
 match the clean design and purpose of the site, although I'm excited to expirement further.</p>
+<p>Install & local host instructions:
+    <ol>
+        <li> git clone https://github.com/danielballoch/danielballoch.git</li>
+        <li> npm install </li>
+        <li> gatsby develop</li>
+    </ol>
+    -keep in mind I still learning myself, if anyone has tips or advice I'd love to hear it. Happy coding!
+</p>
 
 <br>
 <a href="https://www.danielballoch.com">© 2020, Daniel Balloch</a>
