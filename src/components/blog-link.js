@@ -9,7 +9,8 @@ margin: 50px auto;
 width: 80vw;
 max-width: 1000px;
 display: flex;
-background-color: #542323;
+/* background-color: #542323; */
+background-color:#76b2cd;
 color: white;
 transition: .3s;
 @media (max-width: 620px) {

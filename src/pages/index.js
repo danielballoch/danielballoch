@@ -316,11 +316,11 @@ class IndexPage extends React.Component {
             </div>
 
             
-            Contact section:
+            {/* Contact section:
             For business oportunitys and enquirys you can email: danielkingballoch@gmail.com or call: +64 022 078 0860
             Subscribe below for a notification once or twice a month when I make a new article 
             or connect with me on social media where I post a bit more frequently,
-            cheers Daniel :)
+            cheers Daniel :) */}
             
             
         </Wrapper>
