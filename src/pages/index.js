@@ -10,7 +10,10 @@ import SEO from "../components/seo"
 import styled from "@emotion/styled"
 
 import responsivedesign from '../images/skill-gifs/responsivedesign.gif'
-import PostListing from "../components/post-link"
+import ProductListing from "../components/post-link"
+import PostListing from "../components/post-link-wide"
+
+import BlogSection from "../components/BlogSection"
 
 const FadeDiv = styled.div`
 opacity: ${props => props.theme.opacity};
@@ -154,7 +157,7 @@ const NavOverlay = styled.div`
 position: fixed;
 display: flex;
 left: 0;
-transform: rotate(90deg);
+transform: rotate(90deg) translateY(40px);
 opacity: .4;
 margin-top: calc(100px + 7%);
 div{
@@ -166,7 +169,6 @@ div{
     }
 }
 a{
-    transform: rotate(180deg);
     margin: 0 10px;
     transition: 3s;
     :hover{
@@ -206,6 +208,7 @@ class IndexPage extends React.Component {
         super(props);
         this.homeref = React.createRef();
         this.projectref = React.createRef();
+        this.postsref = React.createRef();
       }
 
       componentDidMount() {
@@ -220,24 +223,24 @@ class IndexPage extends React.Component {
     };
 
     state = {
-      scroll: false,
+      scroll: "home",
   };
     
     handleScroll = (event) => {
-      const scrollTarget = document.getElementById('projects').offsetHeight-60;
-      if(window.pageYOffset > scrollTarget){
+      const scrollTarget = document.getElementById('projects').offsetHeight - 80;
+      const scrollTarget2 = document.getElementById('posts').offsetHeight + 300;
+      if(window.pageYOffset < scrollTarget){
+        if (this.state.scroll !== "home") {this.setState({scroll: "home"})}
+      } 
+      else if(window.pageYOffset > scrollTarget && window.pageYOffset < scrollTarget2) {
           this.setState({
-              scroll: true
+              scroll: "projects"
           })
       } else {
-          this.setState({
-              scroll: false
-          })
+          {this.setState({scroll: "posts"})}
       }
       console.log(this.state.scroll);
-      
-      
-      
+      console.log(window.pageYOffset,scrollTarget, scrollTarget2)
     };
 
     
@@ -247,20 +250,22 @@ class IndexPage extends React.Component {
     const entry = this.props.entry;
     const exit = this.props.exit;
     const data = this.props.data;
-    const postEdges = data.allMarkdownRemark.edges;
+    const projects = data.projects.edges;
+    const posts = data.posts.edges;
+    console.log(data)
     console.log("index",transitionStatus, entry, exit)
     
     return (
         <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <NavOverlay >
-                <NavLink onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})} theme={this.state.scroll ? undefined : active}>Home</NavLink>
+                <NavLink onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})} theme={this.state.scroll === "home" ? active : undefined}>Home</NavLink>
                 {/* <div>Skills</div> */}-
-                <NavLink onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll ? active : undefined} >Projects</NavLink>
+                <NavLink onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll === "projects" ? active : undefined} >Projects</NavLink>
+                <NavLink onClick={() => this.postsref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll === "posts" ? active : undefined} >Articles</NavLink>
             </NavOverlay>
         <Wrapper ref={this.homeref} >
             <SEO title="Home" />
-            <AniDiv >
-               
+            <AniDiv >            
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
                     <h2>Hey, I'm Daniel. A front-end developer whose always learning and building.</h2>
                     <p><b>ph:</b> (+64) 022 0780868</p>
@@ -282,8 +287,6 @@ class IndexPage extends React.Component {
                         </a>                       
                     </SocialDiv>
                     </p>
-
-
                 </HeroText> 
                 <HeroImage>
                     <Img fluid={data.placeholderImage.childImageSharp.fluid} />
@@ -306,8 +309,18 @@ class IndexPage extends React.Component {
                 
             </AniDiv>
             <ProjectSection ref={this.projectref} id="projects">
-                <PostListing postEdges={postEdges} />
+                <ProductListing postEdges={projects} />
             </ProjectSection>
+            <div ref={this.postsref} id="posts">
+            <BlogSection  posts={posts}/>
+            </div>
+
+            
+            Contact section:
+            For business oportunitys and enquirys you can email: danielkingballoch@gmail.com or call: +64 022 078 0860
+            Subscribe below for a notification once or twice a month when I make a new article 
+            or connect with me on social media where I post a bit more frequently,
+            cheers Daniel :)
             
             
         </Wrapper>
@@ -356,7 +369,10 @@ export const Query = graphql`
           }
         }
       }
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      projects: allMarkdownRemark(
+          filter: {fields: {collection: {eq: "projects"}}}
+          sort: { order: DESC, fields: [frontmatter___date] }
+          ) {
         edges {
           node {
             id
@@ -380,6 +396,36 @@ export const Query = graphql`
                     }
                   }
                 }
+            }
+          }
+        }
+      }
+    posts: allMarkdownRemark(
+        filter: {fields: {collection: {eq: "posts"}}}
+        limit: 3
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            id
+            excerpt(pruneLength: 125)
+            timeToRead
+            frontmatter {
+              title
+              path
+              tags
+              date(formatString: "DD MMMM, YYYY")
+              image {
+                childImageSharp {
+                  fluid(
+                    maxWidth: 1000
+                    quality: 90
+                    traceSVG: { color: "#2B2B2F" }
+                  ) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
+              }
             }
           }
         }

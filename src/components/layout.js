@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, withAssetPrefix } from "gatsby"
+import { ThemeProvider } from 'emotion-theming';
+import theme from '../../config/theme';
 
 import "./layout.css"
 
@@ -25,12 +27,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
+      <ThemeProvider theme={theme}>
         <main>{children}</main>
         <footer style={{textAlign: 'center'}}>
           © {new Date().getFullYear()}, 
           {` `}
           <a href="https://www.danbwebdesign.com">Daniel Balloch</a>
         </footer>
+        </ThemeProvider>
       </div>
     </>
   )
