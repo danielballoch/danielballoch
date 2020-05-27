@@ -271,7 +271,7 @@ class IndexPage extends React.Component {
                     <h2>Hey, I'm Daniel. A Web Developer whose always learning and building.</h2>
                     <p><b>ph:</b> (+64) 022 0780868</p>
                     <p><b>email:</b> danielkingballoch@gmail.com</p>
-                    <p><b>tools:</b> JS, React, html, css, Gatsby</p>
+                    {/* <p><b>tools:</b> JS, React, html, css, Gatsby</p> */}
                     <p>
                     <SocialDiv>
                         <a href="https://github.com/danielballoch">                     
