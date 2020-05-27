@@ -238,7 +238,7 @@ export default MencoProject
 
 export const query = graphql`
   query {
-    markdownRemark(frontmatter: {title: {eq: "Starwars Species Quiz" } }
+    markdownRemark(frontmatter: {title: {eq: "Starwars App" } }
         ){
         html
       frontmatter {
