@@ -5,7 +5,7 @@ gitlink: "https://github.com/danielballoch/star-wars-species-quiz"
 image: "./starwars-quizz.jpg"
 date: "2020-01-27"
 title: "Starwars App"
-service: "App Development, Logo Design"
+service: "App Development, Logo Design (Udemy)"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 
