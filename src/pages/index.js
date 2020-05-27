@@ -261,6 +261,7 @@ class IndexPage extends React.Component {
                 <NavLink onClick={() => this.homeref.current.scrollIntoView({behavior: 'smooth',block: 'start',inline: 'start',})} theme={this.state.scroll === "home" ? active : undefined}>Home</NavLink>
                 {/* <div>Skills</div> */}-
                 <NavLink onClick={() => this.projectref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll === "projects" ? active : undefined} >Projects</NavLink>
+                -
                 <NavLink onClick={() => this.postsref.current.scrollIntoView({behavior: 'smooth',block: 'center',inline: 'center',})} theme={this.state.scroll === "posts" ? active : undefined} >Articles</NavLink>
             </NavOverlay>
         <Wrapper ref={this.homeref} >

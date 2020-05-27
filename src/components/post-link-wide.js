@@ -94,8 +94,10 @@ class PostListing extends React.Component {
             <Flex>
             <Paragraph>
             <h2>Articles</h2>
-            <p>I've made a few posts in order to help me refine what I've learned, as well as put project examples out there for anyone who 
-            who could use it and is learning along side me</p>
+            {/* <p>I've made a few posts in order to help me refine what I've learned, as well as put project examples out there for anyone who 
+            who could use it and is learning along side me</p> */}
+            <p>Short but sweet articles sharing things I've learned and find usefull. 
+            Hopefully there's some valuable ideas (and mistakes) in here for everyone honing the craft :)</p>
             <Link to="/blog">see all posts</Link>
             </Paragraph>
             <div>

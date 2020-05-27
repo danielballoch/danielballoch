@@ -5,34 +5,64 @@ gitlink: "https://github.com/danielballoch/summit-chasing"
 image: "./SummitThumb.png"
 date: "2020-10-27"
 title: "SummitChasing"
-service: "Coming soon..."
+service: "Full Stack Dropship Ecommerce W/ CMS"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 
-intro1: "Coming soon"
+intro1: "SummitChasing is a print and clothing store which aims to inspire doers and share positive messages in a fashionable manner. 
+There's a range of continued designs along with the Summit Raffle Drop: A limited stock product released each month which, upon purchase, puts you in the raffle to be 1/5 lucky winners of that months summit chasing goodie bag."
+intro2: "Create a fully custom drop-ship eccomerce site with CMS, secure payments and automated fulfillment"
 intro3: "
-I checked out the data available and brainstormed ideas before deciding on a quiz. After this I made an mvp and added to gh-pages, before updating styles and getting underway with the meat of the project." 
+I brainstormed, looked at the already existing tools and methods for dropship & ecommerce, tested apis, looked at database design, selected tools and thought about what best fit the project and would have good transfer to future projects." 
 
 intro4: "
-The styling of this app was aimed at staying true to the Starwars universe, the hero image shows a few different characters, and colors representing their archetype are intermixed. I aimed to get the user to question where they would fit amongst these popular characters and draw them into the quiz. Multiple choice buttons (young, old, ancient) etc. reduce form completion time and keep the user engaged, while the eye color and hair drop-downs display a large number of options, without compromising design.
+While still in progress (a flow cart and progress list can be found at the bottom of the page), I've already learnt a lot more about Stripe, Next.js, react, node, apis, databases, psql, CMS, sanity, query languages (GROQ) and the bigger picture of business. While challenging at times, it's been a lot of fun!
 "
 
 
-heading1: "Front End App Development"
+heading1: "Project Architechture"
 
 paragraph1_1: "
-The app was coded to be responsive, although it was a quick one so It didn't have full fledged prototypes, a simple text document and an idea in my head is all I worked from. I kept the features minimal, so I could start learning more about the full stack sooner and make projects which I would be more excited about."
+I ended up on Next.js as the framework, stripe api for payments, printify api for product fulfullment, psql for my database and sanity as my headless CMS.
+User data is stored on the psql database, along with basic product data for the cart system. Product details, images, copy etc is stored on sanity and basic copies
+are also uploaded to the printify store, where the real products are created.
+"
 
 paragraph1_2: "
-How does it work?
-The app is fairly simple and includes 4 basic stages. 1: data grabbed from api and converted to json. 2: user form is filled (or left pre-filled) and submitted, inputs are added to state. 3: a result is chosen via if statements and relevant image stored in state. 4: props (state) sent to resultTemplate page and page is displayed "
+How the front end fits in with this:"
 
-paragraph1_3: "
-Creating a logo in photoshop was quite fun. I used the same Starwars font as the apps hero text and blended in the outline style. I also stuck with the same colors from the app to keep branding consistent. A black eclipse was masked with a faded gradient and I overlayed a few layers with brush marks, playing with the blending options and adding an outer glow, as well as some color here and there, to give the impression of stars."
+heading2: "Front End App Development"
 
-paragraph1_4: "
-I could have made this app look better and wanted to add features such as page transitions, animation, image optimization, etc. but opted to leave as is and continue on learning new things rather than spending more time on this, although it did serve its purpose. I learnt more about git, apis and I'm excited to learn more! If you have any feedback or questions I'd love to hear from you, Daniel. 
+paragraph2_1: "
+I'm fairly familar with fontend development at this point, using bootstrap to get the project up quick before starting on the more technical stuff meant I 
+had something decent looking and could come back to it later. I didn't plan the design of this one too much, just a quick few prototypes in Adobe XD since I already had an idea of what I wanted and I was more excited to get stuck into the back end stuff."
+
+paragraph3_1: "
+The front end section was a bit of a challenge, but I came across some innovations on the part of Vercel that made things really interesting and exciting for the future of web development.  
 "
+
+paragraph3_2: "
+Most of the site is static and prerendered, however the cart component is one page where data needs to be refreshed since the user is able to adjust product quantity. Thankfully there's SWR: a react hooks library for remote data fetching, which makes this easier. I used SWR throughout my project, but the mutate function specifically came in handy in this case, although I'm still unsure how to make it look clean with compartmentation.
+"
+
+paragraph3_3: "
+The database design was new to me as I've only set up simple databases, I tried to learn the basics of relational databases: tables, fields, primary keys, foreign keys, data types, normal forms etc and see if there were already establised ecommerce designs or methods which I could adjust for my own use. I ended up with the database to the right, although this is subject to change as the app is developed.
+"
+heading4: "Sanity & Printful"
+
+paragraph4_1: "
+The last CMS I set up was netlify because It's where I host a couple of my websites and was easy to integrate, but for this project I really wanted to 
+research a bit more a find the best option. Sanity looked to be one of the best options to me as it was customisable and had a good free plan.
+"
+
+paragraph4_2: "
+Setting this up was simple I just downloading one of their templates and edited the schemas to fit for my products, then went through their documentation and learnt how to query data using GROQ. I'm fairly comfortable with GraphQL due to my experience playing around with Gatsby, and this wasn't too different, so it was fairly straight forward once I knew the syntax.
+"
+
+paragraph5_1: "
+That concludes the main points of the project, if you have any questions, advice, critique or would like me to work on a project I'd love to hear from you!
+"
+
 
 ---
 

@@ -7,6 +7,10 @@ import SEO from "../../../components/seo"
 import styled from '@emotion/styled'
 import Img from "gatsby-image"
 
+import summitGif from "./summitGif.gif"
+import cartGif from "./cartGif.gif"
+import sanityGif from "./sanityGif.gif"
+
 
 const FadeDiv = styled.div`
 opacity: ${props => props.theme.opacity};
@@ -184,25 +188,26 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 </SLink>
             </NavOverlay>
         <Wrapper >
-            <SEO title="Starwars Species Quiz" />
+            <SEO title="SummitChasing" />
                 <h1>{post.title}</h1>
                 <p><b>Tasks:</b> {post.service}</p>
-                <p><b>Tools:</b> React, JS, css, html</p>
+                <p><b>Tools:</b> Next.js, Sanity CMS, Printful API, React, PSQL</p>
                 <hr/>
     
             <MainIconDiv>
-                <IconLink href="https://danielballoch.github.io/star-wars-species-quiz/"><IconDiv><SocialIcon fluid={data.menco.childImageSharp.fluid}/><div>View Site</div></IconDiv></IconLink>
+                <IconLink href="https://github.com/danielballoch/summit-chasing"><IconDiv><SocialIcon fluid={data.menco.childImageSharp.fluid}/><div>View Site</div></IconDiv></IconLink>
                 <IconLink href={post.gitlink}><IconDiv><SocialIcon fluid={data.github.childImageSharp.fluid}/><div>View Repo</div></IconDiv></IconLink>
             </MainIconDiv>
             <br/>
             <AniDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <p>{post.intro1}</p>
             <p><b>Challenge: </b>{post.intro2}</p>
-            <Img fluid={data.images.nodes[1].childImageSharp.fluid} />
+            {/* <Img fluid={data.images.nodes[1].childImageSharp.fluid} /> */}
+            <img src={summitGif} width="1200px"/>
             
             <p><b>Solution: </b>{post.intro3}</p>
             <p>{post.intro4}</p>
-            <p>view the site live: <a href="https://danielballoch.github.io/star-wars-species-quiz/">https://danielballoch.github.io/star-wars-species-quiz/</a>  or see the process in detail below</p>
+            <p>view the site code: <a href="https://github.com/danielballoch/summit-chasing">https://github.com/danielballoch/summit-chasing</a>  or see the process in detail below</p>
 
                 
             </AniDiv>
@@ -210,15 +215,30 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 <h2>{post.heading1}</h2>
                 <p>{post.paragraph1_1}</p>
                 <p>{post.paragraph1_2}</p>
-               
-                <Img fluid={data.images.nodes[2].childImageSharp.fluid} />
-                <h2>Logo Development</h2>
+                <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
+
+                <h2>{post.heading2}</h2>
+                <p>{post.paragraph2_1}</p> 
+                <Img fluid={data.images.nodes[3].childImageSharp.fluid} />
+
+                <h2>Cart & Database</h2>
                 <ImgDiv>
-                    <Img fluid={data.images.nodes[0].childImageSharp.fluid} />
+                    <img src={cartGif}/>
                 </ImgDiv>
-                <p>{post.paragraph1_3}</p> 
+                <p>{post.paragraph3_1}</p> 
+                <p>Feel free to help me out if you have some insight in this: <a href="https://stackoverflow.com/questions/61653622/next-react-swr-refresh-from-button-click-in-child-component-can-i-use-a-call/61702840#61702840">stackoverflow question page</a></p>
+                <ImgDiv>
+                    <Img fluid={data.images.nodes[5].childImageSharp.fluid} />
+                </ImgDiv>
+                <p>{post.paragraph3_2}</p> 
+                <p>{post.paragraph3_3}</p> 
                 
-                <p>{post.paragraph1_4}</p>
+                <h2>{post.heading4}</h2>
+                <p>{post.paragraph4_1}</p>
+                <img src={sanityGif} width="100%"/>
+                <p>View sanity app code: <a href="https://github.com/danielballoch/summit-cms">here on github</a></p>
+                <p>{post.paragraph4_2}</p>
+                <p>{post.paragraph5_1}</p>
                     
             </AniDiv4>
             <TransitionLink 
@@ -251,10 +271,17 @@ export const query = graphql`
             intro3
             intro4
             heading1
+            heading2
             paragraph1_1
             paragraph1_2
-            paragraph1_3
-            paragraph1_4
+            paragraph2_1
+            paragraph3_1
+            paragraph3_2
+            paragraph3_3
+            heading4
+            paragraph4_1
+            paragraph4_2
+            paragraph5_1
       }
     }
 

@@ -1,20 +1,17 @@
 ---
 path: "/blog/mens-neutrals"
-image: "./Neutral-colors.png"
+image: "./database.png"
 date: "2019-05-31"
-title: "Menco color guide - shopping simplified"
+title: "Article 3"
 published: true
-tags: ['all', 'color']
+tags: ['databases', 'sql']
 ---
 
 [neutral1]: Neutral-colors-outfit.jpg
 [neutral2]: Neutral-colors.png
 
 
-Our philosophy and tips for building a versatile mens wardrobe that will make your life easy and draw eyes for all the right reasons.
-If you ever find yourself looking in the mirror or holding your shorts next to shirt and thinking somethings a little off, or worse yet, someone point blank tells you your clothes don't match, this is a must read.
-
-Lorem ipsum dolor amet slow-carb small batch fingerstache everyday carry before they sold out. Austin locavore deep v shabby chic, hella dreamcatcher plaid. Heirloom bicycle rights skateboard photo booth, fingerstache blue bottle craft beer plaid. Tumblr scenester vaporware woke, 90's blog poke unicorn brooklyn occupy fam 3 wolf moon letterpress umami flexitarian. Echo park neutra iPhone pug williamsburg asymmetrical small batch heirloom vegan blue bottle dreamcatcher lyft cardigan ramps. Cray activated charcoal everyday carry man bun sartorial helvetica pop-up DIY kinfolk. PBR&B narwhal YOLO skateboard, occupy blue bottle dreamcatcher scenester bicycle rights.
+Donec vulputate non ante et malesuada. In vitae nunc tempus, sollicitudin ligula sollicitudin, faucibus quam. Morbi vel tristique est, sit amet tempus mauris. Donec vitae luctus metus. Quisque ut accumsan ligula. Etiam eu ultricies risus. Pellentesque molestie magna tempor, porta ipsum quis, egestas lacus. 
 
 ![alt-text][neutral2]
 

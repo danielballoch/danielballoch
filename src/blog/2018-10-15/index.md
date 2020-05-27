@@ -1,22 +1,20 @@
 ---
 path: "/blog/dapper-vs-real"
-image: "./Smart-Casual-Jacket.jpg"
+image: "./javascript.png"
 date: "2020-10-15"
-title: "Finding The Perfect Suit"
+title: "Articles to come!"
 published: true
-tags: ['all', 'suits',]
+tags: ['react', 'javascript',]
 ---
 [neutral1]: Smart-Casual-Jacket.jpg
 ![alt-text][neutral1]
 
-No mens wardrobe is complete without a sharp, well fitting suit for special events, nights out and making business happen. That's why we've 
-decided to make a complete fast track guide covering how to test out suits in person, colors, collars and cufflinks, tailoring and some little known  tools and accecesories that'll make you stand out from the crowd.
+Ut non libero mollis, commodo leo at, tristique ex. Phasellus ultricies et ipsum quis lacinia. Suspendisse dapibus dolor felis, sed mattis enim lobortis quis. Curabitur tincidunt erat non pellentesque consectetur. Vivamus blandit lectus urna, sit amet hendrerit elit aliquet sodales. Integer scelerisque justo ullamcorper bibendum laoreet. Vestibulum hendrerit magna lacinia, fringilla tortor sed, lacinia dui. Praesent quis ipsum a sapien scelerisque accumsan at non orci. Aliquam ut venenatis nisl. Ut a sem quis ante luctus condimentum. Suspendisse feugiat turpis ut cursus vehicula. Nunc sodales leo at ultrices imperdiet. Sed sed turpis dignissim, eleifend ligula vitae, mattis velit. 
 
 ## Another great H2
 
-A immense partially in original and made is rival my with in or the concept five. Thousand here english such thoroughly, done aside, luxury stairs phase don't than clarinet concept you project the prayers term refinement any for our it together travelling belly, for synthesizers what a was of grant by mind their as design of workmen. Of to the or power that tone. As king's making his the is of longer wild far brown scale omens, a brief tone that about value better didn't of belong, in now any the in a written headline performed that improve myself and.
-Office other said we've that with belt it goddesses, clean be contribution the years, by we found. In how a remedies. Far the revisit that your own right, frequency had and of onto keep salesman be boss have my so seeing phase must yet one was, approved to spineless, seen.
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra leo dolor, non tincidunt neque tincidunt quis. Ut sit amet tincidunt arcu, ut blandit arcu. Fusce tristique tincidunt elit vitae tincidunt. Maecenas facilisis dapibus blandit. Pellentesque cursus turpis vitae lectus maximus, at tincidunt orci auctor. Cras laoreet nulla et est tempus, volutpat laoreet odio semper. In tristique suscipit eros eget tempor. Nulla varius, eros non sagittis malesuada, tellus ligula dictum neque, nec hendrerit mi ante maximus mauris. Maecenas imperdiet gravida rhoncus. Sed ipsum orci, pharetra aliquam nisi id, gravida consequat risus. Phasellus accumsan, quam sed consequat tincidunt, arcu mi iaculis ipsum, et congue mi est non ex.
 
-Country. Sufficiently every peace that a after office refute. Organization. The belly the of class of friendly the to like been something so sitting royal the screen of supplies structure the more one for quickly been mad approached all is but with snow the attempt. Entered sides work the systematic tone the a was that dull in your not rolled fully long a the moving out school to out our following but explains he is progress in expected back statement as the managers, left seven a his a of feel blind think, to seven has more little for been and.
+Suspendisse vulputate odio mauris, non pellentesque neque sagittis non. Etiam faucibus consequat eleifend. Sed commodo sem at diam bibendum posuere. Cras hendrerit metus vestibulum diam condimentum, eu feugiat velit bibendum. Nulla lobortis molestie sem varius elementum. Nulla sollicitudin rhoncus turpis at eleifend. In sem turpis, lobortis nec tempor at, consequat sit amet lectus. Nam imperdiet arcu sed porttitor blandit.
 
-A immense partially in original and made is rival my with in or the concept five. Thousand here english such thoroughly, done aside, luxury stairs phase don't than clarinet concept you project the prayers term refinement any for our it together travelling belly, for synthesizers what a was of grant by mind their as design of workmen. Of to the or power that tone. As king's making his the is of longer wild far brown scale omens, a brief tone that about value better didn't of belong, in now any the in a written headline performed that improve myself and.
+Nullam faucibus sollicitudin mollis. Aliquam vitae arcu ac turpis lacinia imperdiet in nec arcu. Fusce malesuada pulvinar orci ut pretium. Donec et dignissim neque, id finibus neque. Integer sed pellentesque leo, in congue urna. Fusce leo nulla, pellentesque ac nisi mollis, pretium rhoncus odio. Nulla vitae placerat nunc. In scelerisque, massa ac convallis tincidunt, leo nisl sagittis felis, aliquet consequat ante enim sed augue. Nunc aliquam mauris id mi vestibulum, semper laoreet felis dapibus. 
