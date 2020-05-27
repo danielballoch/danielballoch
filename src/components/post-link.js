@@ -32,6 +32,7 @@ h1{
 `
 const InsideWrapper =styled.div`
 .image{
+    object-fit: fill;
     width: 480px;
     height: 238px;
     @media (max-width: 620px) {

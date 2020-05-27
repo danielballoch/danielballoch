@@ -2,7 +2,7 @@
 posttype: "project"
 path: "/projects/summit-chasing/summit-chasing/"
 gitlink: "https://github.com/danielballoch/summit-chasing"
-image: "./SummitThumb.png"
+image: "./summit-thumb2.png"
 date: "2020-10-27"
 title: "SummitChasing"
 service: "Full Stack Dropship Ecommerce W/ CMS"

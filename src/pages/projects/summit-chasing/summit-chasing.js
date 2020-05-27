@@ -308,7 +308,7 @@ export const query = graphql`
           }
         }
     }
-    menco: file(relativePath: { eq: "social-icons/starwarsicon.png" }) {
+    menco: file(relativePath: { eq: "social-icons/summit-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 50) {
             ...GatsbyImageSharpFluid
