@@ -227,8 +227,9 @@ class IndexPage extends React.Component {
   };
     
     handleScroll = (event) => {
-      const scrollTarget = document.getElementById('projects').offsetHeight - 80;
-      const scrollTarget2 = document.getElementById('posts').offsetHeight + 300;
+      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+      const scrollTarget = document.getElementById('projects').offsetTop - (.5 * vh);
+      const scrollTarget2 = document.getElementById('posts').offsetTop - (.5 * vh);
       if(window.pageYOffset < scrollTarget){
         if (this.state.scroll !== "home") {this.setState({scroll: "home"})}
       } 
