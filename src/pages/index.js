@@ -240,8 +240,8 @@ class IndexPage extends React.Component {
       } else {
           {this.setState({scroll: "posts"})}
       }
-      console.log(this.state.scroll);
-      console.log(window.pageYOffset,scrollTarget, scrollTarget2)
+    //   console.log(this.state.scroll);
+    //   console.log(window.pageYOffset,scrollTarget, scrollTarget2)
     };
 
     
