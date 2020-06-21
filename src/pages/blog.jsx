@@ -16,6 +16,11 @@ text-align: center;
 const Container = styled.div`
 margin: auto;
 `
+const Intro = styled.div`
+margin: auto;
+width: 800px;
+text-align: justify;
+`
    
 
 class Index extends React.Component {
@@ -54,7 +59,11 @@ class Index extends React.Component {
             <SEO title="Blog"/>
             <Header>
                 <h1>Welcome to the Community</h1>
-                <h3>This is where we post all insider information around mens fashion!</h3>
+                <Intro>
+                    <p>Check out the articles below for insights and innovations in design, development, seo, user experience etc.
+                    For more frequent news, updates, tips and tricks check out the social platforms at the bottom of the page.</p>
+                </Intro>
+                
                 <TagsBlock list={postList} pageTags={this.state.pageTags}/>
             </Header>
             <PostListing postEdges={postEdges} />

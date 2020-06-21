@@ -8,6 +8,11 @@ display: flex;
 justify-content: center;
 max-width: 1000px;
 margin: auto;
+flex-direction: row;
+@media (max-width: 900px) {
+    flex-direction: column;
+}
+
 `
 
 const Paragraph = styled.div`
@@ -15,21 +20,25 @@ text-align: left;
 width: 40vw;
 margin: 50px 0px;
 padding: 50px;
+@media (max-width: 900px) {
+    width: 100%;
+}
 `
 
 const Wrapper = styled.div`
 margin: 50px auto;
 width: 40vw;
-height: 120px;
+min-height: 120px;
+height: auto;
 max-width: 500px;
 text-align: left;
 display: flex;
 background-color: #542323;
 color: white;
 transition: .3s;
-@media (max-width: 620px) {
-        width: 80vw;
-        flex-direction: column;
+@media (max-width: 900px) {
+        width: 100%;
+        
         h1{
             font-size:30px;
         }
