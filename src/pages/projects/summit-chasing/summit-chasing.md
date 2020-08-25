@@ -13,7 +13,7 @@ intro1: "SummitChasing is a print and clothing store which aims to inspire doers
 There's a range of continued designs along with the Summit Raffle Drop: A limited stock product released each month which, upon purchase, puts you in the raffle to be 1/5 lucky winners of that months summit chasing goodie bag."
 intro2: "Create a fully custom drop-ship eccomerce site with CMS, secure payments and automated fulfillment"
 intro3: "
-I brainstormed, looked at the already existing tools and methods for dropship & ecommerce, tested apis, looked at database design, selected tools and thought about what best fit the project and would have good transfer to future projects." 
+I brainstormed, looked at the already existing tools and methods for dropship & ecommerce, tested apis, looked at database design, selected tools and thought about what best fit the project and would also have good transfer to future projects in terms of my own learning." 
 
 intro4: "
 While still in progress (a flow cart and progress list can be found at the bottom of the page), I've already learnt a lot more about Stripe, Next.js, react, node, apis, databases, psql, CMS, sanity, query languages (GROQ) and the bigger picture of business. While challenging at times, it's been a lot of fun!
