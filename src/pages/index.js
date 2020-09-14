@@ -3,6 +3,7 @@ import Link from 'gatsby-plugin-transition-link'
 import TransitionLink from 'gatsby-plugin-transition-link'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 
 import Image from "../components/image"
@@ -275,18 +276,18 @@ class IndexPage extends React.Component {
                     {/* <p><b>tools:</b> JS, React, html, css, Gatsby</p> */}
                     <p>
                     <SocialDiv>
-                        <a href="https://github.com/danielballoch">                     
+                        <OutboundLink href="https://github.com/danielballoch">                     
                         <SocialIcon fluid={data.github.childImageSharp.fluid} />
-                        </a>  
-                        <a href="https://dribbble.com/danielballoch">                     
+                        </OutboundLink>  
+                        <OutboundLink href="https://dribbble.com/danielballoch">                     
                         <SocialIcon fluid={data.dribble.childImageSharp.fluid} />
-                        </a>   
-                        <a href="https://www.instagram.com/danbwebdesign/">
+                        </OutboundLink>   
+                        <OutboundLink href="https://www.instagram.com/danbwebdesign/">
                         <SocialIcon fluid={data.insta.childImageSharp.fluid} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/danielpatrickballoch/">
+                        </OutboundLink>
+                        <OutboundLink href="https://www.linkedin.com/in/danielpatrickballoch/">
                             <SocialIcon fluid={data.linkedin.childImageSharp.fluid} />
-                        </a>                       
+                        </OutboundLink>                       
                     </SocialDiv>
                     </p>
                 </HeroText> 

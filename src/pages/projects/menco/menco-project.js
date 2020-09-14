@@ -6,6 +6,7 @@ import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import styled from '@emotion/styled'
 import Img from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import planninggif from '../menco/planningdemo.gif'
 import responsivegif from '../menco/responsivedesign.gif'
@@ -152,7 +153,7 @@ transition: .3s;
     opacity: 1;
 }
 `
-const IconLink = styled.a`
+const IconLink = styled(OutboundLink)`
 color: black;
 text-decoration: none; 
 :nth-of-type(1){

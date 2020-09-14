@@ -1,5 +1,6 @@
 import React from "react"
 import styled from '@emotion/styled';
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const ProjectSection = styled.div`
 display: flex;
@@ -25,13 +26,13 @@ const blog = () => {
     <ProjectSection>
         <h2>Contact: <a href="mailto:danielkingballoch@gmail.com">danielkingballoch@gmail.com</a> </h2>
         <p>
-            <a href="https://www.linkedin.com/in/danielpatrickballoch/">LinkedIn</a>
+            <OutboundLink href="https://www.linkedin.com/in/danielpatrickballoch/">LinkedIn</OutboundLink>
             - 
-            <a href="https://dribbble.com/danielballoch">Dribble</a>
+            <OutboundLink href="https://dribbble.com/danielballoch">Dribble</OutboundLink>
             - 
-            <a href="https://www.instagram.com/danbwebdesign/">Instagram</a>
+            <OutboundLink href="https://www.instagram.com/danbwebdesign/">Instagram</OutboundLink>
             -  
-            <a href="https://github.com/danielballoch">Github</a>
+            <OutboundLink href="https://github.com/danielballoch">Github</OutboundLink>
         </p> 
         
         <Copyright>© {new Date().getFullYear()}, {` `}<a href="https://www.danielballoch.com">Daniel Balloch</a></Copyright>    
