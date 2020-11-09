@@ -195,7 +195,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 <hr/>
     
             <MainIconDiv>
-                <IconLink href={post.gitlink}><IconDiv><SocialIcon fluid={data.menco.childImageSharp.fluid}/><div>View Site</div></IconDiv></IconLink>
+                <IconLink href="https://pascoes.danielballoch.com/"><IconDiv><SocialIcon fluid={data.menco.childImageSharp.fluid}/><div>View Site</div></IconDiv></IconLink>
                 <IconLink href={post.gitlink}><IconDiv><SocialIcon fluid={data.github.childImageSharp.fluid}/><div>View Repo</div></IconDiv></IconLink>
             </MainIconDiv>
             <br/>

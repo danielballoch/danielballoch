@@ -5,11 +5,12 @@ gitlink: "https://danielballoch657622.invisionapp.com/overview/Draft2-ck7lh5bxn0
 image: "./pascoes-thumbnail.png"
 date: "2020-03-27"
 title: "Pascoes Plumbing"
-service: "Discovery, Web Design"
+service: "Discovery, Web Design & Development"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 
-intro1: "This project was for a local plumbing company starting up, unfortunatly the owner ran into some issues around covid-19 so it has been postponed at this stage, however I have finished the full design and completing the site would just be a matter of putting it into code.
+intro1: "
+This project was for a local plumbing company starting up right here in Hamilton. Unfortunatly the owner has decided to shut down shop with issues arriving around covid, however I went ahead and completed the website for my own learning. The full site is live at https://pascoes.danielballoch.com/ and complete with CMS Integration, meaning site content such as contact information or any other site copy can be easily updated without a developer or any stress.
 "
 
 intro2: "
