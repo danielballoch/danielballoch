@@ -105,8 +105,12 @@ class PostListing extends React.Component {
             <h2>Articles</h2>
             {/* <p>I've made a few posts in order to help me refine what I've learned, as well as put project examples out there for anyone who 
             who could use it and is learning along side me</p> */}
-            <p>Insights and innovations in design, development, seo, user experience etc, with the aim of bringing value and knowlege
+            {/* <p>Insights and innovations in design, development, seo, user experience etc, with the aim of bringing value and knowlege
             to business owners, designers and developers alike; as well as opening doors for communication, shared learning and synergy.
+             </p> */}
+             <p>Insights and innovations in UX, design, development and business. These posts are based on my journey and content, techniques or ideas
+            I find interesting or helpful along the way. I'm only human so there's bound to be the odd spelleng mistake, pea-brained rambling or
+            unfounded certinty amoungst the troves of valuable content. Read at your own risk.     
              </p>
             <Link to="/blog">see all posts</Link>
             </Paragraph>
