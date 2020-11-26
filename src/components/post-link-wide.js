@@ -109,7 +109,7 @@ class PostListing extends React.Component {
             to business owners, designers and developers alike; as well as opening doors for communication, shared learning and synergy.
              </p> */}
              <p>Insights and innovations in UX, design, development and business. These posts are based on my journey and content, techniques or ideas
-            I find interesting or helpful along the way. I'm only human so there's bound to be the odd spelleng mistake, pea-brained rambling or
+            I find interesting or helpful along the way. I'm only human so there's bound to be the odd spelleng mistake, rambling or
             unfounded certinty amoungst the troves of valuable content. Read at your own risk.     
              </p>
             <Link to="/blog">see all posts</Link>
