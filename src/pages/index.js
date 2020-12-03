@@ -375,6 +375,7 @@ export const Query = graphql`
       projects: allMarkdownRemark(
           filter: {fields: {collection: {eq: "projects"}}}
           sort: { order: DESC, fields: [frontmatter___date] }
+          limit: 4
           ) {
         edges {
           node {
