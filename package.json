@@ -21,6 +21,8 @@
     "gatsby-source-prismic": "^3.2.1",
     "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.5.3",
+    "prismic-dom": "^2.2.4",
+    "prismjs": "^1.22.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

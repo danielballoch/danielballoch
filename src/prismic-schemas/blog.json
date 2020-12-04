@@ -1,0 +1,27 @@
+{
+    "Main" : {
+      "uid" : {
+        "type" : "UID",
+        "config" : {
+          "label" : "uid",
+          "placeholder" : "welcome-to-the-blog"
+        }
+      },
+      "title" : {
+        "type" : "StructuredText",
+        "config" : {
+          "single" : "heading1",
+          "label" : "Title",
+          "placeholder" : "Welcome to the blog"
+        }
+      },
+      "subtext" : {
+        "type" : "StructuredText",
+        "config" : {
+          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+          "label" : "subtext",
+          "placeholder" : "Check out the articles below for insights and innovations in design,  development, seo, user experience etc. For more frequent news, updates,  tips and tricks check out the social platforms at the bottom of the  page."
+        }
+      }
+    }
+  }

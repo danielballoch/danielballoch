@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PostListing from "../components/blog-link"
+import PostListing2 from "../components/prismic-blog-link"
 import Layout from "../components/layout"
 import styled from '@emotion/styled';
 import TagsBlock from '../components/PostTagsBlock';
@@ -53,19 +54,22 @@ class Index extends React.Component {
         console.log(this.props)
         const postEdges = this.props.data.allMarkdownRemark.edges;
         const postList = this.props.pageContext.postList;
+        const blogPage = this.props.data.blog.edges[0].node.data
+        const blogPost = this.props.data.blogposts.edges
+        console.log(blogPost)
 
       return (
           <Container>
             <SEO title="Blog"/>
             <Header>
-                <h1>Welcome to the Community</h1>
+                <h1>{blogPage.title[0].text}</h1>
                 <Intro>
-                    <p>Check out the articles below for insights and innovations in design, development, seo, user experience etc.
-                    For more frequent news, updates, tips and tricks check out the social platforms at the bottom of the page.</p>
+                    <p>{blogPage.subtext[0].text}</p>
                 </Intro>
                 
                 <TagsBlock list={postList} pageTags={this.state.pageTags}/>
             </Header>
+            <PostListing2 postEdges={blogPost}/>
             <PostListing postEdges={postEdges} />
           </Container>
       );
@@ -79,6 +83,36 @@ export const pageQuery = graphql`
     query(
         $tagName: String, 
     ) {
+        blog: allPrismicBlogPage {
+            edges {
+                node {
+                    data {
+                        title {
+                            text
+                        }
+                        subtext {
+                            text
+                        }
+                    }
+                }
+            }
+        }
+        blogposts: allPrismicBlogPost {
+            edges {
+                node {
+                    data {
+                        date
+                        title {
+                            text
+                        }
+                        tags {
+                            text
+                        }
+
+                    }
+                }
+            }
+        }
         allMarkdownRemark(
             filter: {fields: {collection: {eq: "posts"}}, frontmatter: {tags: {eq: $tagName}}}
             limit: 6

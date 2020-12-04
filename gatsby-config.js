@@ -1,3 +1,5 @@
+const prismicHtmlSerializer = require('./src/gatsby/htmlSerializer')
+
 module.exports = {
   siteMetadata: {
     title: `Daniel Balloch`,
@@ -92,7 +94,7 @@ module.exports = {
           // The name of your prismic.io repository. This is required.
           // Example: 'gatsby-source-prismic-test-site' if your prismic.io address
           // is 'gatsby-source-prismic-test-site.prismic.io'.
-          repositoryName: 'pascoes',
+          repositoryName: 'danielballoch',
     
           // Set a link resolver function used to process links in your content.
           // Fields with rich text formatting or links to internal content use this
@@ -131,8 +133,7 @@ module.exports = {
           // Provide an object of Prismic custom type JSON schemas to load into
           // Gatsby. This is required.
           schemas: {
-            blogpage: require('./src/prismic-schemas/blog_page.json'),
-            blogpost: require('./src/prismic-schemas/blog_post.json'),
+            blog: require('./src/prismic-schemas/blog.json'),
           },
     
           // Set a default language when fetching documents. The default value is
