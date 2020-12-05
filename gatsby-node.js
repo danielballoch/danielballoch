@@ -1,6 +1,7 @@
 const path = require("path");
 
-const _ = require("lodash")
+const _ = require("lodash");
+// const { default: Template } = require("./src/templates/prismic-post");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
@@ -28,6 +29,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve('src/templates/blogTemplate.js');
     const blogTagTemplate= path.resolve('src/pages/blog.jsx');
+    const blogTemplate = path.resolve('src/templates/prismic-post.js');
     resolve(
          graphql(`{
             posts: allMarkdownRemark(
@@ -47,7 +49,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
                         }
                     }
                 }
-            }   
+            }
+            blog: allPrismicBlogPost {
+                nodes {
+                  id
+                  uid
+                  data {
+                    date
+                  }
+                }
+              }   
         }`).then(result => {
         if (result.errors){
             return reject(result.errors);
@@ -55,6 +66,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
         //shorten links
         const posts = result.data.posts.edges;
+        const blog = result.data.blog.nodes;
+       
         //tag
 
         const postsByTag = {};
@@ -102,6 +115,25 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
                 }
             });
         });
+
+       
+          //create prismic blog pages
+          
+        
+          // Create pages for each Page in Prismic using the selected template.
+          blog.forEach((node) => {
+            createPage({
+              path: `/${node.uid}`,
+              component: blogTemplate,
+              context: {
+                id: node.id,
+                uid: node.uid
+              },
+            })
+          })
+
+
+        //end
         
 
         
@@ -109,4 +141,27 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     );
 });     
 };
+
+
+
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions
+
+//   // Query all Pages with their IDs and template data.
+//   const pages = await graphql(`
+//     {
+//       allPrismicBlogPost {
+//         nodes {
+//           id
+//           uid
+//           data {
+//             template
+//           }
+//         }
+//       }
+//     }
+//   `)
+
+  
+// }
 
