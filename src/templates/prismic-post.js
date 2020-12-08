@@ -47,14 +47,18 @@ export default function Template({
     //run through content and create either text or image based on body.slice_type
     const blogContent = post.body.map((slice, index) => {
         if(slice.slice_type === 'text'){
-            return (
-            <div>
-                    {slice.primary.text.map(text => (
-                        <p>{text.text}</p>
-                    ))}
-            </div>
-            )
-        } 
+            var textSection = slice.primary.text.map((text,i) => {
+                if (text.type === "heading2") {
+                    console.log("should be returning h2")
+                    return <h2>{text.text}</h2>
+                } else {
+                    console.log("should be returning p")
+                    return <p>{text.text}</p>
+                }
+            })
+            return textSection;
+            
+        }
         else if (slice.slice_type === 'image'){
             return <img src={slice.primary.image.url} />
         }

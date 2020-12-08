@@ -7,13 +7,6 @@
           "placeholder": "UniqueId"
         }
       },
-      "tags": {
-        "type": "StructuredText",
-        "config": {
-          "multi": "paragraph",
-          "label": "tags"
-        }
-      },
       "title": {
         "type": "StructuredText",
         "config": {
@@ -26,6 +19,29 @@
         "type": "Date",
         "config": {
           "label": "date"
+        }
+      },
+      "tags": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph",
+          "label": "tags"
+        }
+      },
+      "thumbnail": {
+        "type": "Image",
+        "config": {
+          "constraint": {},
+          "thumbnails": [],
+          "label": "thumbnail"
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, rtl",
+          "label": "description",
+          "placeholder": "brief description"
         }
       },
       "body": {

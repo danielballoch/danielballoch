@@ -33,7 +33,8 @@ height: auto;
 max-width: 500px;
 text-align: left;
 display: flex;
-background-color: #542323;
+/* background-color: #542323; */
+background-color:#3b4f75;
 color: white;
 transition: .3s;
 @media (max-width: 900px) {

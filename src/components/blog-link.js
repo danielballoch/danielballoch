@@ -42,8 +42,9 @@ p:hover{
 :hover {
  filter: brightness(110%);
 }
-
 `
+
+
 
 class PostListing extends React.Component {
     getPostList() {
@@ -77,6 +78,7 @@ class PostListing extends React.Component {
         
         return(
             <div>
+            
                 {
                 postList.map(post => (
                     <Link to={post.path} key={post.title}>

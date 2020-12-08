@@ -100,6 +100,7 @@ export const pageQuery = graphql`
         blogposts: allPrismicBlogPost {
             edges {
                 node {
+                    uid
                     data {
                         date
                         title {
@@ -108,7 +109,12 @@ export const pageQuery = graphql`
                         tags {
                             text
                         }
-
+                        thumbnail {
+                            url
+                        }
+                        description {
+                            text
+                        }
                     }
                 }
             }

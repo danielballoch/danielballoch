@@ -15,6 +15,7 @@ import ProductListing from "../components/post-link"
 import PostListing from "../components/post-link-wide"
 
 import BlogSection from "../components/BlogSection"
+import BlogSectionPrismic from "../components/BlogSectionPrismic"
 
 const FadeDiv = styled.div`
 opacity: ${props => props.theme.opacity};
@@ -254,6 +255,7 @@ class IndexPage extends React.Component {
     const data = this.props.data;
     const projects = data.projects.edges;
     const posts = data.posts.edges;
+    const blogposts = data.blogposts.edges;
     console.log(data)
     console.log("index",transitionStatus, entry, exit)
     
@@ -315,7 +317,8 @@ class IndexPage extends React.Component {
                 <ProductListing postEdges={projects} />
             </ProjectSection>
             <div ref={this.postsref} id="posts">
-            <BlogSection  posts={posts}/>
+            {/* <BlogSection  posts={posts}/> */}
+            <BlogSectionPrismic posts={blogposts}/>
             </div>
 
             
@@ -404,6 +407,28 @@ export const Query = graphql`
           }
         }
       }
+      blogposts: allPrismicBlogPost(limit: 3) {
+        edges {
+            node {
+                uid
+                data {
+                    date
+                    title {
+                        text
+                    }
+                    tags {
+                        text
+                    }
+                    thumbnail {
+                        url
+                    }
+                    description {
+                        text
+                    }
+                }
+            }
+        }
+    }
     posts: allMarkdownRemark(
         filter: {fields: {collection: {eq: "posts"}}}
         limit: 3
