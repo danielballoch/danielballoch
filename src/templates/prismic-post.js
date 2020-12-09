@@ -88,7 +88,7 @@ export default function Template({transitionStatus,
 
   return (
       <div>
-          <SEO title={"hello"}/>
+          <SEO title={post.title[0].text}/>
           <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
           <Nav/>
           <Container>

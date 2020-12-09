@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostListing from "../components/blog-link"
-import PostListing2 from "../components/prismic-blog-link"
+import PostListing from "../components/prismic-blog-link"
 import Nav from "../components/nav"
 import Layout from "../components/layout"
 import styled from '@emotion/styled';
@@ -51,7 +50,6 @@ class Index extends React.Component {
     render() {
         console.log("props: ",this.props)
         console.log("state", this.state)
-        const postEdges = this.props.data.allMarkdownRemark.edges;
         const postList = this.props.pageContext.postList;
         const blogPage = this.props.data.blog.edges[0].node.data;
         const blogPost = this.props.data.blogposts.edges;
@@ -73,10 +71,9 @@ class Index extends React.Component {
                 
                 <TagsBlock list={postList} pageTags={this.props.pageContext.tagName}/>
             </Header>
-            
+
             <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
-            <PostListing2 postEdges={blogPost}/>
-            {/* <PostListing postEdges={postEdges} /> */}
+            <PostListing postEdges={blogPost}/>
             </FadeDiv>
           </Container>
       );
@@ -129,35 +126,5 @@ export const pageQuery = graphql`
                 }
             }
         }
-        allMarkdownRemark(
-            filter: {fields: {collection: {eq: "posts"}}, frontmatter: {tags: {eq: $tagName}}}
-            limit: 6
-            sort: { order: DESC, fields: [frontmatter___date] }
-          ) {
-            edges {
-              node {
-                id
-                excerpt(pruneLength: 125)
-                timeToRead
-                frontmatter {
-                  title
-                  path
-                  tags
-                  date(formatString: "DD MMMM, YYYY")
-                  image {
-                    childImageSharp {
-                      fluid(
-                        maxWidth: 1000
-                        quality: 90
-                        traceSVG: { color: "#2B2B2F" }
-                      ) {
-                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
       `;
