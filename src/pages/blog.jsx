@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostListing from "../components/blog-link"
 import PostListing2 from "../components/prismic-blog-link"
+import Nav from "../components/nav"
 import Layout from "../components/layout"
 import styled from '@emotion/styled';
 import TagsBlock from '../components/PostTagsBlock';
@@ -22,6 +23,26 @@ margin: auto;
 width: 800px;
 text-align: justify;
 `
+
+const FadeDiv = styled.div`
+opacity: ${props => props.theme.opacity};
+transition: .3s;
+`
+FadeDiv.defaultProps = {
+    theme: {
+        opacity: "1",
+        transform: "translateX(0)"
+    }
+}
+
+const entering = {
+    opacity: "0",
+    transform: "translateX(-20%)"
+}
+const exiting = {
+    opacity: "0",
+    transform: "translateX(0)"
+}
    
 
 class Index extends React.Component {
@@ -54,13 +75,16 @@ class Index extends React.Component {
         console.log(this.props)
         const postEdges = this.props.data.allMarkdownRemark.edges;
         const postList = this.props.pageContext.postList;
-        const blogPage = this.props.data.blog.edges[0].node.data
-        const blogPost = this.props.data.blogposts.edges
+        const blogPage = this.props.data.blog.edges[0].node.data;
+        const blogPost = this.props.data.blogposts.edges;
+        const transitionStatus = this.props.transitionStatus;
         console.log(blogPost)
 
       return (
           <Container>
             <SEO title="Blog"/>
+            <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
+            <Nav/>
             <Header>
                 <h1>{blogPage.title[0].text}</h1>
                 <Intro>
@@ -71,6 +95,7 @@ class Index extends React.Component {
             </Header>
             <PostListing2 postEdges={blogPost}/>
             <PostListing postEdges={postEdges} />
+            </FadeDiv>
           </Container>
       );
     }

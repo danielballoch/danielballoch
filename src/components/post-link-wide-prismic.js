@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import TransitionLink from 'gatsby-plugin-transition-link'
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 
@@ -96,12 +97,20 @@ class PostListing extends React.Component {
             I find interesting or helpful along the way. I'm only human so there's bound to be the odd spelleng mistake, rambling or
             unfounded certinty amoungst the troves of valuable content. Read at your own risk.     
              </p>
-            <Link to="/blog">see all posts</Link>
+            <TransitionLink to="/blog"
+                exit={{length: .5, state: {pass: true}}}
+                entry={{length: .3, delay: .5, state: {pass: false}}}
+            >
+            see all posts
+            </TransitionLink>
             </Paragraph>
             <div>
                 {
                 postList.map(post => (
-                    <Link to={post.path} key={post.title}>
+                    <TransitionLink to={post.path} key={post.title}
+                        exit={{length: .5, state: {pass: true}}}
+                        entry={{length: .3, delay: .5, state: {pass: false}}}
+                    >
                         <Wrapper>
                             {/* <Image className="image" fluid={post.image.childImageSharp.fluid}/> */}
                             <img className="image" src={post.thumbnail}/>
@@ -111,7 +120,7 @@ class PostListing extends React.Component {
                                 <p className="sub_text">{post.date}</p>                            
                             </div>
                         </Wrapper>
-                    </Link>
+                    </TransitionLink>
                 ))
                 }
             </div>

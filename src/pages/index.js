@@ -256,7 +256,7 @@ class IndexPage extends React.Component {
     const projects = data.projects.edges;
     const posts = data.posts.edges;
     const blogposts = data.blogposts.edges;
-    console.log(data)
+    console.log(this.props)
     console.log("index",transitionStatus, entry, exit)
     
     return (

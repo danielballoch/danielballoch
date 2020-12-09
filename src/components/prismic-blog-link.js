@@ -4,7 +4,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import Image from 'gatsby-image';
 import styled from '@emotion/styled';
 
-const SLink = styled(Link)`
+const SLink = styled(TransitionLink)`
 text-decoration: none;
 `
 
@@ -137,7 +137,10 @@ class PostListing extends React.Component {
             </NavOverlay>
                 {
                 postList.map(post => (
-                    <SLink to={"/" + post.path}>
+                    <SLink to={"/" + post.path}
+                        exit={{length: .5, state: {pass: true}}}
+                        entry={{length: .3, delay: .5, state: {pass: false}}}
+                    >
                         <Wrapper>
                             {/* <Image className="image" fluid={post.image.childImageSharp.fluid}/> */}
                             <img src={post.thumbnail}/>

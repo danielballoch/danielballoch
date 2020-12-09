@@ -1,9 +1,33 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import TransitionLink from 'gatsby-plugin-transition-link'
 import Layout from "../components/layout"
 import styled from '@emotion/styled';
 import TagsBlock from "../components/PostTagsBlock"
 import SEO from "../components/seo"
+
+import Nav from "../components/nav"
+
+const FadeDiv = styled.div`
+opacity: ${props => props.theme.opacity};
+transition: .3s;
+`
+FadeDiv.defaultProps = {
+    theme: {
+        opacity: "1",
+        transform: "translateX(0)"
+    }
+}
+
+const entering = {
+    opacity: "0",
+    transform: "translateX(-20%)"
+}
+const exiting = {
+    opacity: "0",
+    transform: "translateX(0)"
+}
+
 
 const Container = styled.div`
 padding: 200px 10px;
@@ -35,13 +59,10 @@ const PostSuggestion = styled.div`
 
 
 
-export default function Template({
+export default function Template({transitionStatus,
   data, pageContext // this prop will be injected by the GraphQL query below.
 }) {
-//   const { markdownRemark } = data 
-  // data.markdownRemark holds our post data
-//   const { frontmatter, html } = markdownRemark
-//   const { next, prev } = pageContext;
+
     const post = data.prismicBlogPost.data 
     console.log(data)
     //run through content and create either text or image based on body.slice_type
@@ -68,6 +89,8 @@ export default function Template({
   return (
       <div>
           <SEO title={"hello"}/>
+          <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
+          <Nav/>
           <Container>
             <BlogPostContainer>
                 <div className="blog-post">
@@ -75,44 +98,11 @@ export default function Template({
                     <h1>{post.title[0].text}</h1>
                     <p>tags: {post.tags[0].text}</p>
 
-                    {/* {post.body[0].primary.text.map(content => (
-                    <p>{content.text}</p>  
-                    ))}
-                    <img src={post.body[1].primary.image.url} />  
-                    {post.body[2].primary.text.map(content => (
-                    <p>{content.text}</p>  
-                    ))} */}
-
                     {blogContent}
-
-
-                    {/* <div
-                    className="blog-post-content"
-                    dangerouslySetInnerHTML={{ __html: html }}
-                    /> */}
-
                 </div>
             </BlogPostContainer>
-    {/* <TagsBlock list={frontmatter.tags || []} /> */}
-    {/* <SuggestionBar>
-        <PostSuggestion>
-          {prev && (
-            <Link to={prev.frontmatter.path}>
-              Previous
-              <h3>{prev.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-        <PostSuggestion>
-          {next && (
-            <Link to={next.frontmatter.path}>
-              Next
-              <h3>{next.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-      </SuggestionBar> */}
       </Container>
+      </FadeDiv>
     </div>
   )
 }
