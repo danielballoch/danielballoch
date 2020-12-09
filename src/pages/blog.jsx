@@ -20,7 +20,8 @@ margin: auto;
 `
 const Intro = styled.div`
 margin: auto;
-width: 800px;
+padding: 0 20px;
+max-width: 800px;
 text-align: justify;
 `
 
