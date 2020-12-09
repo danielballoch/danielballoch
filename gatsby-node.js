@@ -30,6 +30,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const blogPostTemplate = path.resolve('src/templates/blogTemplate.js');
     const blogTagTemplate= path.resolve('src/pages/blog.jsx');
     const blogTemplate = path.resolve('src/templates/prismic-post.js');
+    const blogTag = path.resolve('src/templates/blogPageTem.js');
     resolve(
          graphql(`{
             posts: allMarkdownRemark(
@@ -54,6 +55,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
                 nodes {
                   id
                   uid
+                  tags
                   data {
                     date
                   }
@@ -70,34 +72,34 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
        
         //tag
 
-        const postsByTag = {};
-        // create post tags page
-        posts.forEach(({ node }) => {
-          if (node.frontmatter.tags) {
-            node.frontmatter.tags.forEach(tag => {
-              if (!postsByTag[tag]) {
-                postsByTag[tag] = [];
-              }
-              postsByTag[tag].push(node);
-            });
-          }
-        });
+        // const postsByTag = {};
+        // // create post tags page
+        // posts.forEach(({ node }) => {
+        //   if (node.frontmatter.tags) {
+        //     node.frontmatter.tags.forEach(tag => {
+        //       if (!postsByTag[tag]) {
+        //         postsByTag[tag] = [];
+        //       }
+        //       postsByTag[tag].push(node);
+        //     });
+        //   }
+        // });
         
-        const postTags = Object.keys(postsByTag);
-        //create tags
-        postTags.forEach(tagName => {
-          const posts = postsByTag[tagName];
+        // const postTags = Object.keys(postsByTag);
+        // //create tags
+        // postTags.forEach(tagName => {
+        //   const posts = postsByTag[tagName];
 
-          createPage({
-            path: `/blog/${tagName}`,
-            component: blogTagTemplate,
-            context: {
-              postList: postTags,
-              posts,
-              tagName,
-            },
-          });
-        });
+        //   createPage({
+        //     path: `/blog/${tagName}`,
+        //     component: blogTagTemplate,
+        //     context: {
+        //       postList: postTags,
+        //       posts,
+        //       tagName,
+        //     },
+        //   });
+        // });
 
 
         //create post pages
@@ -118,6 +120,37 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
        
           //create prismic blog pages
+
+          //prismic tag
+
+        const postsByTag = {};
+        // create post tags page
+        blog.forEach(node => {
+          if (node.tags) {
+            node.tags.forEach(tag => {
+              if (!postsByTag[tag]) {
+                postsByTag[tag] = [];
+              }
+              postsByTag[tag].push(node);
+            });
+          }
+        });
+        
+        const postTags = Object.keys(postsByTag);
+        //create tags
+        postTags.forEach(tagName => {
+          const posts = postsByTag[tagName];
+
+          createPage({
+            path: `/blog/${tagName}`,
+            component: blogTag,
+            context: {
+              postList: postTags,
+              posts,
+              tagName,
+            },
+          });
+        });
           
         
           // Create pages for each Page in Prismic using the selected template.

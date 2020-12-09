@@ -101,7 +101,7 @@ class PostListing extends React.Component {
             I find interesting or helpful along the way. I'm only human so there's bound to be the odd spelleng mistake, rambling or
             unfounded certinty amoungst the troves of valuable content. Read at your own risk.     
              </p>
-            <TransitionLink to="/blog"
+            <TransitionLink to="/blog/All"
                 exit={{length: .5, state: {pass: true}}}
                 entry={{length: .3, delay: .5, state: {pass: false}}}
             >

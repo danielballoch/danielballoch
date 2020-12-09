@@ -31,10 +31,10 @@ h1{
     text-align: left;
     text-decoration: none;
 }
-.image{
-    width: 100%;
-    min-width: 200px;
+img {
+    max-width: 50%;
 }
+
 .text-box{
     /* margin: 20px; */
     padding: 20px;

@@ -47,46 +47,6 @@ const exiting = {
    
 
 class Index extends React.Component {
-    constructor(props) {
-        super(props);
-      }
-      state = {
-        pageTags: ["all"],
-    };
-    componentDidMount(){
-        // const posts = this.props.data.allMarkdownRemark.edges;
-        // const postsByTag = {};
-        // posts.forEach(({ node }) => {
-        // if (node.frontmatter.tags) {
-        //         node.frontmatter.tags.forEach(tag => {
-        //         if (!postsByTag[tag]) {
-        //             postsByTag[tag] = [];
-        //         }
-
-        //         postsByTag[tag].push(node);
-        //         });
-        //     }
-        // });
-        // const pageTags = Object.keys(postsByTag);
-        // this.setState({pageTags: pageTags}); 
-
-        const blogPost = this.props.data.blogposts.edges;
-        var tags = [];
-        blogPost.forEach(post=> {
-            console.log("post" , post)
-            if(post.node.tags){
-                post.node.tags.forEach(tag => {
-                    tags.push(tag);
-                })
-            }
-            console.log("tags:" , tags)
-            this.setState({pageTags: tags})
-        })
-        
-        
-    }
-
-
     
     render() {
         console.log("props: ",this.props)
@@ -96,13 +56,14 @@ class Index extends React.Component {
         const blogPage = this.props.data.blog.edges[0].node.data;
         const blogPost = this.props.data.blogposts.edges;
         const transitionStatus = this.props.transitionStatus;
+
        
         console.log(blogPost)
 
       return (
           <Container>
             <SEO title="Blog"/>
-            <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
+            
             <Nav/>
             <Header>
                 <h1>{blogPage.title[0].text}</h1>
@@ -110,8 +71,10 @@ class Index extends React.Component {
                     <p>{blogPage.subtext[0].text}</p>
                 </Intro>
                 
-                <TagsBlock list={postList} pageTags={this.state.pageTags}/>
+                <TagsBlock list={postList} pageTags={this.props.pageContext.tagName}/>
             </Header>
+            
+            <FadeDiv theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined}>
             <PostListing2 postEdges={blogPost}/>
             {/* <PostListing postEdges={postEdges} /> */}
             </FadeDiv>
@@ -141,7 +104,9 @@ export const pageQuery = graphql`
                 }
             }
         }
-        blogposts: allPrismicBlogPost {
+        blogposts: allPrismicBlogPost(
+            filter: {tags: {eq: $tagName}}
+        ) {
             edges {
                 node {
                     uid

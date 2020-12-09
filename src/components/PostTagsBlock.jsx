@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import TransitionLink from 'gatsby-plugin-transition-link'
 import PropTypes from 'prop-types';
 
 const TagsContainer = styled.div`
@@ -11,18 +11,29 @@ const TagsContainer = styled.div`
   justify-content: center;
   a {
     margin: 0 1rem 1rem 0;
-    
+    text-decoration: none;
     padding: 0.3rem 0.6rem;
     /* border: 2px solid ${props => props.theme.colors.highlights.blue}; */
     border: 1px solid ${props => props.theme.colors.neutral.black};
     border-radius: 100px;
     transition: .3s;
+    color: black; 
     &:hover {
         /* background-color: ${props => props.theme.colors.highlights.blue};
         color: ${props => props.theme.colors.background.white}; */
+        color: ${props => props.theme.colors.highlights.blue};
         border: 1px solid ${props => props.theme.colors.highlights.blue};
     }
   }
+    .all {
+    background-color: whitesmoke;
+    
+    color: black;
+    }
+    .active {
+        background-color: black;
+        color: whitesmoke;
+    }
 
   @media (max-width: 720px){
     width: 100%;
@@ -38,6 +49,7 @@ const TagsContainer = styled.div`
   }
 `;
 
+
 const TagsBlock = ({ list, pageTags }) => (
   <TagsContainer>
     {list &&
@@ -48,9 +60,15 @@ const TagsBlock = ({ list, pageTags }) => (
         console.log(pageTags.length)
         return ( 
             <div>
-            <Link key={tag} to={`/blog/${tag}`} className={pageTags.includes(tag) && pageTags.length > 1 && tag !== "all" ? 'active' : pageTags.length > 2 && tag === "all" ? 'active' : "" }>
+            <TransitionLink 
+                key={tag} 
+                to={`/blog/${tag}`} 
+                exit={{length: .5, state: {pass: true}}}
+                entry={{length: .3, delay: .5, state: {pass: false}}}
+                className={pageTags.includes(tag) && pageTags.length > 1 && tag !== "all" ? 'active' : pageTags.length > 2 && tag === "all" ? 'active' : "" }
+            >
                 <span>{upperTag}</span>
-            </Link>
+            </TransitionLink>
           </div>
         );
       })}
