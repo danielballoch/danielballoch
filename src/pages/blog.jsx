@@ -94,7 +94,7 @@ class Index extends React.Component {
                 <TagsBlock list={postList} pageTags={this.state.pageTags}/>
             </Header>
             <PostListing2 postEdges={blogPost}/>
-            <PostListing postEdges={postEdges} />
+            {/* <PostListing postEdges={postEdges} /> */}
             </FadeDiv>
           </Container>
       );
