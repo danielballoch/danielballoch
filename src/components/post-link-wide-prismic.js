@@ -16,6 +16,10 @@ flex-direction: row;
 
 `
 
+const SLink = styled(TransitionLink)`
+text-decoration:none;
+`
+
 const Paragraph = styled.div`
 text-align: left;
 width: 40vw;
@@ -107,7 +111,7 @@ class PostListing extends React.Component {
             <div>
                 {
                 postList.map(post => (
-                    <TransitionLink to={post.path} key={post.title}
+                    <SLink to={post.path} key={post.title}
                         exit={{length: .5, state: {pass: true}}}
                         entry={{length: .3, delay: .5, state: {pass: false}}}
                     >
@@ -120,7 +124,7 @@ class PostListing extends React.Component {
                                 <p className="sub_text">{post.date}</p>                            
                             </div>
                         </Wrapper>
-                    </TransitionLink>
+                    </SLink>
                 ))
                 }
             </div>
