@@ -3,11 +3,11 @@ posttype: "project"
 path: "/projects/pascoes-plumbing/pascoes-plumbing"
 gitlink: "https://danielballoch657622.invisionapp.com/overview/Draft2-ck7lh5bxn0aj20144830d8hcv/screens?v=4VWNwsQtp2AW7Z%2BoQcG3Vw%3D%3D&linkshare=urlcopied"
 image: "./pascoes-thumbnail.png"
-date: "2020-03-27"
+date: "2020-09-27"
 title: "Pascoes Plumbing"
-service: "Discovery, Web Design & Development"
+service: "Brand Presence Website + CMS"
 published: true
-tags: ['Brand Identity', 'Ecommerce',]
+tags: ['Brand Presence Website',]
 
 intro1: "
 This project was for a local plumbing company starting up right here in Hamilton. Unfortunatly the owner has decided to shut down shop with issues arriving around covid, however I went ahead and completed the website for my own learning. The full site is live at https://pascoes.danielballoch.com/ and complete with CMS Integration, meaning site content such as contact information or any other site copy can be easily updated without a developer or any stress.

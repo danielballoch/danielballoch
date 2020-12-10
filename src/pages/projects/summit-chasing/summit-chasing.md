@@ -3,9 +3,9 @@ posttype: "project"
 path: "/projects/summit-chasing/summit-chasing/"
 gitlink: "https://github.com/danielballoch/summit-chasing"
 image: "./summit-thumb2.png"
-date: "2020-10-27"
+date: "2020-04-27"
 title: "SummitChasing"
-service: "Full Stack Dropship Ecommerce W/ CMS"
+service: "Full Stack Ecommerce"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]
 

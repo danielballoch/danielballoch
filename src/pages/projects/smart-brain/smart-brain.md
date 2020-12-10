@@ -5,7 +5,7 @@ gitlink: "https://github.com/danielballoch/smart-brain"
 image: "./steve.PNG"
 date: "2020-02-27"
 title: "Smart-Brain"
-service: "Full stack app development (Udemy)"
+service: "Full Stack App (Udemy Learning)"
 tools: "React, Express, PostgreSQL"
 published: true
 tags: ['Brand Identity', 'Ecommerce',]

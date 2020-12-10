@@ -4,6 +4,7 @@ import TransitionLink from 'gatsby-plugin-transition-link'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { InView } from "react-intersection-observer"
 
 
 import Image from "../components/image"
@@ -30,6 +31,18 @@ height: 100%;
 padding: 100px 1.0875rem 1.45rem;
 transition: .3s;
 opacity: ${props => props.theme.opacity};
+
+.visible {
+    transition: 1s;
+    opacity:1;
+}
+.hidden {
+    transition: 1s;
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+
 `
 
 const AniDiv = styled.div`
@@ -226,7 +239,10 @@ class IndexPage extends React.Component {
 
     state = {
       scroll: "home",
+      inView: false,
   };
+
+  
     
     handleScroll = (event) => {
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
@@ -248,7 +264,6 @@ class IndexPage extends React.Component {
 
     
     render (){
-
     const transitionStatus = this.props.transitionStatus;
     const entry = this.props.entry;
     const exit = this.props.exit;
@@ -316,9 +331,17 @@ class IndexPage extends React.Component {
             <ProjectSection ref={this.projectref} id="projects">
                 <ProductListing postEdges={projects} />
             </ProjectSection>
+            
             <div ref={this.postsref} id="posts">
-            {/* <BlogSection  posts={posts}/> */}
-            <BlogSectionPrismic posts={blogposts}/>
+            <InView as="div" 
+            threshold="0.4"
+            delay="0.5s"
+            onChange={(inView, entry) => (console.log('Inview:', inView), this.setState({inView:inView }))}
+            className={this.state.inView ? "visible" : "hidden"
+            } 
+            >
+                <BlogSectionPrismic posts={blogposts}/>
+            </InView>
             </div>
 
             

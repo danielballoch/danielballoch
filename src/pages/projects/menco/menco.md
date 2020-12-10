@@ -5,7 +5,7 @@ gitlink: "https://github.com/danielballoch/ecom"
 image: "./homepage.jpg"
 date: "2020-10-15"
 title: "Menco"
-service: "Brand Identity, Serverless Ecommerce"
+service: "Brand Idea + Serverless Ecommerce Website"
 published: true
 tags: ['Brand Identity', 'Serverless Ecommerce',]
 
