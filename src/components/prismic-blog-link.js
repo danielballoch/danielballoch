@@ -23,6 +23,23 @@ transition: .3s;
         h1{
             font-size:30px;
         }
+        img {
+            max-width: 100% !important;
+            height: 120px;
+            /* object-fit: fill; */
+            
+            object-position: top;
+            object-fit: cover;
+        }
+        .text-box {
+            p {
+                /* display: none; */
+            }
+            .sub_text {
+                display:none;
+            }
+        }
+        
     }
 
 h1{
@@ -31,8 +48,10 @@ h1{
     text-align: left;
     text-decoration: none;
 }
+
 img {
     max-width: 50%;
+    margin-bottom: 0;
 }
 
 .text-box{

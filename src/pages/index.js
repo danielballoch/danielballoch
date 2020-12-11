@@ -41,6 +41,12 @@ opacity: ${props => props.theme.opacity};
     opacity: 0;
     transform: translateX(40px);
 }
+@media (max-width: 500px) {
+    .hidden {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
 
 
 `
