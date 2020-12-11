@@ -48,6 +48,11 @@ transition: .3s;
         h1{
             font-size:30px;
         }
+        .image {
+           min-width: 100px !important;
+           max-width: 40%;
+           width: 100% !important; 
+        }
     }
 
 h4{
@@ -98,8 +103,7 @@ class PostListing extends React.Component {
             <Paragraph>
             <h2>Articles</h2>
              <p>Insights and innovations in UX, design, development and business. These posts are based on my journey and content, techniques or ideas
-            I find interesting or helpful along the way. I'm only human so there's bound to be the odd spelleng mistake, rambling or
-            unfounded certinty amoungst the troves of valuable content. Read at your own risk.     
+            I find interesting or helpful along the way.   
              </p>
             <TransitionLink to="/blog/All"
                 exit={{length: .5, state: {pass: true}}}
