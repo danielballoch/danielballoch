@@ -11,6 +11,8 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import pascoesGif from "./pascoesGif.gif"
 import discoveryGif from "./discoveryGif.gif"
 import designGif from "./designGif.gif"
+import prismicGif from "./prismic.gif"
+import simonGif from "./simon.gif"
 
 const FadeDiv = styled.div`
 opacity: ${props => props.theme.opacity};
@@ -191,7 +193,7 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
             <SEO title="Pascoes Plumbing" />
                 <h1>{post.title}</h1>
                 <p><b>Tasks:</b> {post.service}</p>
-                <p><b>Tools:</b> Adobe XD, Email, Google Docs, inVision</p>
+                <p><b>Tools:</b> Adobe XD, inVision, Gatsby, React, Prismic</p>
                 <hr/>
     
             <MainIconDiv>
@@ -215,12 +217,25 @@ const MencoProject = ({data, transitionStatus, entry, exit}) => {
                 <h2>{post.heading1}</h2>
                 <p>{post.paragraph1_1}</p>
                 <p>{post.paragraph1_2}</p>
+                <p>{post.paragraph1_3}</p>
                 <img width="100%" src={discoveryGif}/>
                 
                 <h2>{post.heading2}</h2>
-                <p>{post.paragraph1_3}</p> 
+                <p>{post.paragraph2}</p> 
                 <img width="100%" src={designGif}/>
-                <p>{post.paragraph1_4}</p>
+                
+                <h2>{post.heading3}</h2>
+                <p>{post.paragraph3_1}</p>
+                <p>{post.paragraph3_2}</p>
+                <img width="100%" src={prismicGif}/>
+                <p>{post.paragraph3_3}</p>
+                <p>{post.paragraph3_4}</p>
+                <p>{post.paragraph3_5}</p>
+                <img width="100%" src={simonGif}/>
+                <p>{post.paragraph3_6}</p>
+                <p>{post.paragraph3_7}</p>
+
+                <p>{post.paragraph4}</p>
                     
             </AniDiv4>
             <TransitionLink 
@@ -254,10 +269,19 @@ export const query = graphql`
             intro4
             heading1
             heading2
+            heading3
             paragraph1_1
             paragraph1_2
             paragraph1_3
-            paragraph1_4
+            paragraph2
+            paragraph3_1
+            paragraph3_2
+            paragraph3_3
+            paragraph3_4
+            paragraph3_5
+            paragraph3_6
+            paragraph3_7
+            paragraph4
       }
     }
 
