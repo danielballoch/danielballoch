@@ -79,15 +79,18 @@ const exiting = {
     transform: "translateX(0)"
 }
 
+const Intro = styled.div`
+p{
+    margin-bottom: 100px;
+}
+`
+
 const HeroText = styled.div`
 position: static;
 float: left;
 width: 50%;
 margin-top: 14%;
 z-index: 100;
-h2{
-    margin-bottom: 100px;
-}
 p{
     transition: 1s;
     transform: ${props => props.theme.transform};
@@ -293,9 +296,15 @@ class IndexPage extends React.Component {
             <SEO title="Home" />
             <AniDiv >            
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
-                    <h2>Hey, I'm Daniel. A Web Developer whose always learning and building.</h2>
+                    <Intro>
+                        <h2>Hey, I'm Daniel. </h2>
+                        <p>I'm on a mission to create effective websites that are fast, mobile friendly and get the right messages accross.</p>
+                    </Intro>
+                    
+                    {/* <p>I'm on a mission to make our digital space faster, easier and more effective one website at a time.</p>
+                    <p>Fast, effective, mobile friendly websites are being made this second... as is a piping hot cup of coffee.</p> */}
                     <p><b>ph:</b> (+64) 022 0780868</p>
-                    <p><b>email:</b> danielkingballoch@gmail.com</p>
+                    <p><b>email:</b> daniel@thoughtfulhq.com</p>
                     {/* <p><b>tools:</b> JS, React, html, css, Gatsby</p> */}
                     <p>
                     <SocialDiv>

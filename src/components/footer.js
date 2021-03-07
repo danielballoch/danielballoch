@@ -24,13 +24,13 @@ margin-top: auto;
 const blog = () => {
     return(
     <ProjectSection>
-        <h2>Contact: <a href="mailto:danielkingballoch@gmail.com">danielkingballoch@gmail.com</a> </h2>
+        <h2>Contact: <a href="mailto:daniel@thoughtfulhq.com">daniel@thoughtfulhq.com</a> </h2>
         <p>
             <OutboundLink href="https://www.linkedin.com/in/danielpatrickballoch/">LinkedIn</OutboundLink>
             - 
             <OutboundLink href="https://dribbble.com/danielballoch">Dribble</OutboundLink>
             - 
-            <OutboundLink href="https://www.instagram.com/danbwebdesign/">Instagram</OutboundLink>
+            <OutboundLink href="https://www.instagram.com/thoughtful_hq/">Instagram</OutboundLink>
             -  
             <OutboundLink href="https://github.com/danielballoch">Github</OutboundLink>
         </p> 
