@@ -280,7 +280,6 @@ class IndexPage extends React.Component {
     const projects = data.projects.edges;
     const posts = data.posts.edges;
     const blogposts = data.blogposts.edges;
-    const THRESHOLD = [0.25, 0.5, 0.75];
     console.log(this.props)
     console.log("index",transitionStatus, entry, exit)
     
@@ -348,7 +347,7 @@ class IndexPage extends React.Component {
             
             <div ref={this.postsref} id="posts">
             <InView as="div" 
-            threshold={THRESHOLD[1]}
+            threshold="0.4"
             delay="0.5"
             onChange={(inView, entry) => (console.log('Inview:', inView), this.setState({inView:inView }))}
             className={this.state.inView ? "visible" : "hidden"
