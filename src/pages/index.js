@@ -280,6 +280,7 @@ class IndexPage extends React.Component {
     const projects = data.projects.edges;
     const posts = data.posts.edges;
     const blogposts = data.blogposts.edges;
+    const THRESHOLD = [0.25, 0.5, 0.75];
     console.log(this.props)
     console.log("index",transitionStatus, entry, exit)
     
@@ -306,7 +307,6 @@ class IndexPage extends React.Component {
                     <p><b>ph:</b> (+64) 022 0780868</p>
                     <p><b>email:</b> daniel@thoughtfulhq.com</p>
                     {/* <p><b>tools:</b> JS, React, html, css, Gatsby</p> */}
-                    <p>
                     <SocialDiv>
                         <OutboundLink href="https://github.com/danielballoch">                     
                         <SocialIcon fluid={data.github.childImageSharp.fluid} />
@@ -321,7 +321,6 @@ class IndexPage extends React.Component {
                             <SocialIcon fluid={data.linkedin.childImageSharp.fluid} />
                         </OutboundLink>                       
                     </SocialDiv>
-                    </p>
                 </HeroText> 
                 <HeroImage>
                     <Img fluid={data.placeholderImage.childImageSharp.fluid} />
@@ -349,8 +348,8 @@ class IndexPage extends React.Component {
             
             <div ref={this.postsref} id="posts">
             <InView as="div" 
-            threshold="0.4"
-            delay="0.5s"
+            threshold={THRESHOLD[1]}
+            delay="0.5"
             onChange={(inView, entry) => (console.log('Inview:', inView), this.setState({inView:inView }))}
             className={this.state.inView ? "visible" : "hidden"
             } 
