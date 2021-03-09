@@ -44,7 +44,7 @@ color: white;
 transition: .3s;
 @media (max-width: 900px) {
         width: 100%;
-        
+        max-height: 250px;
         h1{
             font-size:30px;
         }
