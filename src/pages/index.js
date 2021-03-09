@@ -313,7 +313,7 @@ class IndexPage extends React.Component {
                         <OutboundLink href="https://dribbble.com/danielballoch">                     
                         <SocialIcon fluid={data.dribble.childImageSharp.fluid} />
                         </OutboundLink>   
-                        <OutboundLink href="https://www.instagram.com/danbwebdesign/">
+                        <OutboundLink href="https://www.instagram.com/thoughtful_hq/">
                         <SocialIcon fluid={data.insta.childImageSharp.fluid} />
                         </OutboundLink>
                         <OutboundLink href="https://www.linkedin.com/in/danielpatrickballoch/">
