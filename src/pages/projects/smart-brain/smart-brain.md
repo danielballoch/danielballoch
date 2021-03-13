@@ -4,7 +4,7 @@ path: "/projects/smart-brain/smart-brain/"
 gitlink: "https://github.com/danielballoch/smart-brain"
 image: "./steve.PNG"
 date: "2020-02-27"
-title: "Smart-Brain"
+title: "Face Recognition App"
 service: "Full Stack App (Udemy Learning)"
 tools: "React, Express, PostgreSQL"
 published: true
