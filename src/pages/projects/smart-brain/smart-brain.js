@@ -249,7 +249,7 @@ export default MencoProject
 
 export const query = graphql`
   query {
-    markdownRemark(frontmatter: {title: {eq: "Smart-Brain" } }
+    markdownRemark(frontmatter: {title: {eq: "Face Recognition App" } }
         ){
         html
       frontmatter {
