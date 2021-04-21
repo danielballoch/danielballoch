@@ -40,6 +40,7 @@ text-align: left;
 padding-top: 10px;
 h2 {
     text-align: left;
+    margin-top: 80px;
 }
 
 `

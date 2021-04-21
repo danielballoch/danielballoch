@@ -80,6 +80,15 @@ const exiting = {
 }
 
 const Intro = styled.div`
+h2 {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+h4 {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
 p{
     margin-bottom: 100px;
 }
@@ -297,8 +306,11 @@ class IndexPage extends React.Component {
             <AniDiv >            
                 <HeroText theme={transitionStatus === "entering" ? entering : transitionStatus === "exiting" ? exiting : undefined} >
                     <Intro>
-                        <h2>Hey, I'm Daniel. </h2>
-                        <p>I'm on a mission to create effective websites that are fast, mobile friendly and get the right messages accross.</p>
+                        <h2>Daniel Balloch</h2>
+                        
+                        <h4>Web Developer & Designer</h4>
+                        {/* <hr/> */}
+                        <p>Get in touch for fast, responsive and professionally tailored websites your customers will love.</p>
                     </Intro>
                     
                     {/* <p>I'm on a mission to make our digital space faster, easier and more effective one website at a time.</p>
